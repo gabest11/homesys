@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Window
+  Transparent = "true">
+
+  <TeletextViewer
+    Name = "m_teletext"
+    Left = "0"
+    Top = "0"
+    Width = "Width"
+    Height = "Height"
+    Anchor = "Fill"
+    />
+  
+</Window>

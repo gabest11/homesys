@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control
+  BackgroundImage = "s|ListBackground.png"
+  BackgroundMargin = "10, 10, 10, 10"
+  SelectedBackgroundImage = "s|ListSelectedBackground.png"
+  SelectedBackgroundMargin = "25, 16, 25, 16"
+	SelectedTextColor = "Text2"
+	TabTop = "false"
+	TabBottom = "false"
+  CanFocus = "1"
+  >
+
+  <Property Name = "SelectedBackgroundImage" Type = "std::wstring" />
+  <Property Name = "SelectedBackgroundMargin" Type = "Vector4i" />
+  <Property Name = "SelectedTextColor" Type = "DWORD" />
+
+  <Slider 
+    Name = "m_slider" 
+    Left = "Width - 45"
+    Right = "Width - 10"
+    Top = "10"
+    Bottom = "Height - 10"
+    Anchor = "Right"
+    Vertical = "true"
+    />
+
+  <Control
+    Name = "m_content"
+    Left = "5"
+    Right = "m_slider.Left - 5"
+    Top = "5"
+    Bottom = "Height - 5"
+    Anchor = "Fill"
+    />
+
+</Control>

@@ -1,0 +1,8 @@
+call pear install -a XML_RPC
+call pear update-channels
+call pear install -fa File_Archive
+@echo !!!FIXME!!! File/Archive.php line 322 'array('[^/]*', '[^/]'),' => 'array('[^\\/]*', '[^\\/]'),'
+call pear install -fa MDB2
+call pear install -fa MDB2#mysql
+call pear install -fa Net_FTP
+call pear install -fa XML_Serializer

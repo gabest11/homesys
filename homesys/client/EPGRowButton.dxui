@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Button
+		BackgroundImage = "s|epgguide_felso.png"
+		BackgroundMargin = "8, 8, 8, 8"
+		FocusedImage = "s|epg_aktiv.png"
+		TextAlign = "Left, Middle"
+    TextMarginLeft = "10"
+    TextMarginRight = "10"
+		TextHeight = "Height * 1/2"
+    >
+
+  <RecordingStateTextureFactory Name = "m_rstf" />
+
+</Button>

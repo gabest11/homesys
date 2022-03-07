@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Button
+		BackgroundImage = "s|SliderBackground.png"
+    Margin = "20"
+    Vertical = "true">
+
+  <Property Name = "Margin" Type = "int" />
+  <Property Name = "Vertical" Type = "bool" />
+  
+  <ButtonNF Name = "m_upleft" />
+  <ButtonNF Name = "m_downright" />
+  
+  <Control 
+    Name = "m_thumb" 
+    BackgroundImage = "s|SliderButton.png" 
+    />
+  
+</Button>

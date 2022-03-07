@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="dxui">
+      <UniqueIdentifier>{15518ce2-d140-4fbe-af93-fe98267fa0b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx;dxui</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Homesys.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Homesys2.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\uninstall.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Browser.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="ChannelTextureFactory.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="client.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Environment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EPGChannelList.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="EPGChannelView.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="EPGDialog.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="EPGHeader.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="EPGHeaderTimeButton.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="EPGProgram.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="EPGRow.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="EPGRowButton.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="EPGRowStack.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="EPGView.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="EPGViewCompact.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="FileBrowser.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="HomesysWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IFlash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageBrowser.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageGrabber.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="LoaderThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuAudioCD.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuAudioSettings.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuDatePicker.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuDVD.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuDVDOSD.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuEditText.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuEPG.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuEPGChannel.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuEPGSearch.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuFileBrowser.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuImageBrowser.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuMain.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuOSD.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuParental.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuPlaylist.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuPresets.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuRecord.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuRecordingModify.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuRecordings.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuSettings.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuSignup.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuTuner.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuTuning.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuTV.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuTVOSD.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuVideoSettings.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuWizard.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerControl1.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerControl2.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordingsDialog.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordingStateTextureFactory.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SeekBar.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="SeekBar2.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusBar.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TVControl.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="Video.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuPresetsOrder.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerControl3.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuWishlist.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuSubtitleSettings.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="TeletextViewer.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuTeletext.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuSmartCard.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuSettingsPersonal.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="HotLinkStrip.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuHotLinkSettings.h">
+      <Filter>dxui</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Browser.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="ChannelTextureFactory.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Environment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EPGChannelList.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="EPGChannelView.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="EPGDialog.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="EPGHeader.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="EPGHeaderTimeButton.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="EPGProgram.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="EPGRow.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="EPGRowButton.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="EPGRowStack.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="EPGView.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="EPGViewCompact.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="FileBrowser.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="HomesysWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageBrowser.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageGrabber.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="LoaderThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuAudioCD.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuAudioSettings.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuDatePicker.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuDVD.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuDVDOSD.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuEditText.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuEPG.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuEPGChannel.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuEPGSearch.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuFileBrowser.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuImageBrowser.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuMain.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuOSD.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuParental.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuPlaylist.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuPresets.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuRecord.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuRecordingModify.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuRecordings.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSettings.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSignup.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuTuner.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuTuning.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuTV.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuTVOSD.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuVideoSettings.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuWizard.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerControl1.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerControl2.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordingsDialog.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordingStateTextureFactory.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="SeekBar.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="SeekBar2.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="StatusBar.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TVControl.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="Video.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuPresetsOrder.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerControl3.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuWishlist.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSubtitleSettings.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="TeletextViewer.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuTeletext.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSmartCard.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="region.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSettingsPersonal.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="HotLinkStrip.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuHotLinkSettings.cpp">
+      <Filter>dxui</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="client.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <DXUI Include="EPGHeader.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="EPGHeaderTimeButton.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="EPGProgram.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="EPGRow.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="EPGRowButton.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="EPGRowStack.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="EPGView.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="FileBrowser.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="ImageBrowser.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="Menu.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuAudioCD.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuAudioSettings.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuDatePicker.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuDVD.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuDVDOSD.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuEditText.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuEPG.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuEPGChannel.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuEPGSearch.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuFileBrowser.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuImageBrowser.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuMain.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuParental.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuPlaylist.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuPresets.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuRecord.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuRecordingModify.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuRecordings.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuSettings.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuSignup.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuTuner.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuTuning.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuTV.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuTVOSD.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuVideoSettings.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuWizard.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="PlayerControl1.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="PlayerControl2.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="SeekBar.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="SeekBar2.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="StatusBar.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="TVControl.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="Window.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuPresetsOrder.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="PlayerControl3.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuWishlist.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuSubtitleSettings.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="TeletextViewer.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuOSD.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuTeletext.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuSmartCard.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuSettingsPersonal.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="HotLinkStrip.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+    <DXUI Include="MenuHotLinkSettings.dxui">
+      <Filter>dxui</Filter>
+    </DXUI>
+  </ItemGroup>
+</Project>

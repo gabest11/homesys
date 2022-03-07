@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control>
+
+  <EPGHeader 
+    Name = "m_header" 
+    Right = "Width" 
+    Height = "30" 
+    Anchor = "Top" 
+    />
+  
+  <EPGRowStack 
+    Name = "m_rowstack" 
+    Top = "30" 
+    Right = "Width" 
+    Bottom = "Height" 
+    Anchor = "Bottom" 
+    />
+
+  <EPGDialog 
+    Name = "m_dialog" 
+    Width = "400" 
+    Height = "210" 
+    Anchor = "Center, Center" 
+    />
+
+	<ChannelTextureFactory Name = "m_ctf" />
+
+</Control>

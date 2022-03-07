@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control
+  BackgroundImage = "s|ListBackground.png"
+  BackgroundMargin = "10, 10, 10, 10"
+  SelectedBackgroundImage = "s|ListSelectedBackground.png"
+  SelectedBackgroundMargin = "22, 16, 26, 16"
+	SelectedTextColor = "Text2"
+  ItemBackgroundOverflow = "SelectedBackgroundMargin"
+  TextMarginLeft = "10"
+  TextMarginRight = "10"
+	TabTop = "false"
+	TabBottom = "false"
+  CanFocus = "1"
+  >
+
+  <Property Name = "ItemBackgroundImage" Type = "std::wstring" />
+  <Property Name = "ItemBackgroundMargin" Type = "Vector4i" />
+  <Property Name = "ItemBackgroundOverflow" Type = "Vector4i" />
+  <Property Name = "SelectedBackgroundImage" Type = "std::wstring" />
+  <Property Name = "SelectedBackgroundMargin" Type = "Vector4i" />
+  <Property Name = "SelectedTextColor" Type = "DWORD" />
+  <Property Name = "Horizontal" Type = "bool" />
+
+</Control>

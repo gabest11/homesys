@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control
+  BackgroundImage = "s|StatusBackground.png"
+  BackgroundMargin = "20, 0, 20, 0"
+  >
+
+  <Control
+    Name = "m_left"
+    Top = "10" 
+    Bottom = "36" 
+    Left = "23"
+    Right = "Width / 2 - 151"
+    Anchor = "Fill"
+    TextAlign = "Left, Middle"
+    TextHeight = "22" 
+    />
+
+  <Control
+    Name = "m_right"
+    Top = "10"
+    Bottom = "36"
+    Left = "Width / 2 + 151"
+    Right = "Width - 23"
+    Anchor = "Fill"
+    TextAlign = "Right, Middle"
+    TextHeight = "22"
+    TextColor = "Text2"
+	/>
+
+  <Control
+    Name = "m_clock"
+    BackgroundImage = "s|StatusClockBackground.png"
+    Top = "10"
+    Bottom = "68"
+    Left = "Width / 2 - 151"
+    Right = "Width / 2 + 151"
+    Anchor = "Center, Top"
+    TextAlign = "Center, Middle"
+    TextMarginBottom = "10" 
+    TextHeight = "36" 
+    TextBold = "true"
+    />
+
+</Control>

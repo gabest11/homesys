@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control
+  ButtonSize = "42, 42"
+  >
+
+  <Property Name = "ButtonSize" Type = "Vector2i" />
+
+  <ButtonNF
+    Name = "m_prev"
+    Left = "36 * 0"
+    Top = "(Height - ButtonSize->y) / 2"
+    Size = "ButtonSize"
+    BackgroundImage = "s|vez1_alap.png"
+    HoverImage = "s|vez1_aktiv.png"
+    />
+
+  <ButtonNF
+    Name = "m_rewind"
+    Left = "36 * 1"
+    Top = "(Height - ButtonSize->y) / 2"
+    Size = "ButtonSize"
+    BackgroundImage = "s|vez2_alap.png"
+    HoverImage = "s|vez2_aktiv.png"
+    />
+
+  <ButtonNF
+    Name = "m_stop"
+    Left = "36 * 2"
+    Top = "(Height - ButtonSize->y) / 2"
+    Size = "ButtonSize"
+    BackgroundImage = "s|vez6_alap.png"
+    HoverImage = "s|vez6_aktiv.png"
+    />
+
+  <ButtonNF
+    Name = "m_play"
+    Left = "36 * 3"
+    Top = "(Height - ButtonSize->y) / 2"
+    Size = "ButtonSize"
+    BackgroundImage = "s|vez5_alap.png"
+    HoverImage = "s|vez5_aktiv.png"
+    />
+
+  <ButtonNF
+    Name = "m_pause"
+    Left = "36 * 4"
+    Top = "(Height - ButtonSize->y) / 2"
+    Size = "ButtonSize"
+    BackgroundImage = "s|vez7_alap.png"
+    HoverImage = "s|vez7_aktiv.png"
+    />
+
+  <ButtonNF
+    Name = "m_forward"
+    Left = "36 * 5"
+    Top = "(Height - ButtonSize->y) / 2"
+    Size = "ButtonSize"
+    BackgroundImage = "s|vez3_alap.png"
+    HoverImage = "s|vez3_aktiv.png"
+    />
+
+  <ButtonNF
+    Name = "m_next"
+    Left = "36 * 6"
+    Top = "(Height - ButtonSize->y) / 2"
+    Size = "ButtonSize"
+    BackgroundImage = "s|vez4_alap.png"
+    HoverImage = "s|vez4_aktiv.png"
+    />
+
+  <ButtonNF
+    Name = "m_record"
+    Left = "36 * 7"
+    Top = "(Height - ButtonSize->y) / 2"
+    Size = "ButtonSize"
+    BackgroundImage = "s|vez8_alap.png"
+    HoverImage = "s|vez8_aktiv.png"
+    />
+
+  <ButtonNF
+    Name = "m_playpause"
+    Visible = "false"
+    />
+
+  <ButtonNF
+    Name = "m_return"
+    Visible = "false"
+    />
+
+  <ButtonNF
+    Name = "m_up"
+    BackgroundImage = "s|kornyil_fel_alap.png"
+    Visible = "false"
+    />
+
+  <ButtonNF
+    Name = "m_down"
+    BackgroundImage = "s|kornyil_le_alap.png"
+    Visible = "false"
+    />
+
+</Control>

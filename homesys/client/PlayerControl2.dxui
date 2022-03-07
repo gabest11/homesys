@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control
+  SmallButtonSize = "57, 57"
+  MediumButtonSize = "67, 67"
+  LargeButtonSize = "88, 88"
+  >
+
+  <Property Name = "SmallButtonSize" Type = "Vector2i" />
+  <Property Name = "MediumButtonSize" Type = "Vector2i" />
+  <Property Name = "LargeButtonSize" Type = "Vector2i" />
+
+  <ButtonNF
+    Name = "m_prev"
+    Left = "0"
+    Top = "(LargeButtonSize->y - SmallButtonSize->y) / 2"
+    Size = "SmallButtonSize"
+    BackgroundImage = "s|vez1_alap.png"
+    HoverImage = "s|vez1_aktiv.png"
+    HoverMarginAll = "7"
+    />
+
+  <ButtonNF
+    Name = "m_next"
+    Left = "212"
+    Top = "(LargeButtonSize->y - SmallButtonSize->y) / 2"
+    Size = "SmallButtonSize"
+    BackgroundImage = "s|vez4_alap.png"
+    HoverImage = "s|vez4_aktiv.png"
+    HoverMarginAll = "7"
+    />
+
+  <ButtonNF
+    Name = "m_rewind"
+    Left = "41"
+    Top = "(LargeButtonSize->y - MediumButtonSize->y) / 2"
+    Size = "MediumButtonSize"
+    BackgroundImage = "s|vez2_alap.png"
+    HoverImage = "s|vez2_aktiv.png"
+    HoverMarginAll = "7"
+    />
+
+  <ButtonNF
+    Name = "m_forward"
+    Left = "162"
+    Top = "(LargeButtonSize->y - MediumButtonSize->y) / 2"
+    Size = "MediumButtonSize"
+    BackgroundImage = "s|vez3_alap.png"
+    HoverImage = "s|vez3_aktiv.png"
+    HoverMarginAll = "7"
+    />
+
+  <ButtonNF
+    Name = "m_stop"
+    Left = "63"
+    Top = "LargeButtonSize->y - MediumButtonSize->y / 2"
+    Size = "MediumButtonSize"
+    BackgroundImage = "s|vez6_alap.png"
+    HoverImage = "s|vez6_aktiv.png"
+    HoverMarginAll = "7"
+    />
+
+  <ButtonNF
+    Name = "m_pause"
+    Left = "141"
+    Top = "LargeButtonSize->y - MediumButtonSize->y / 2"
+    Size = "MediumButtonSize"
+    BackgroundImage = "s|vez7_alap.png"
+    HoverImage = "s|vez7_aktiv.png"
+    HoverMarginAll = "7"
+    />
+
+  <ButtonNF
+    Name = "m_play"
+    Left = "92"
+    Top = "0"
+    Size = "LargeButtonSize"
+    BackgroundImage = "s|vez5_alap.png"
+    HoverImage = "s|vez5_aktiv.png"
+    HoverMarginAll = "11"
+    />
+
+  <ButtonNF
+    Name = "m_playpause"
+    Visible = "false"
+    />
+
+  <ButtonNF
+    Name = "m_record"
+    Visible = "false"
+    />
+
+</Control>

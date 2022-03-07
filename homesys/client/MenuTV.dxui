@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Menu
+  m_title.Text = "sl|TV"
+  m_logo.BackgroundImage = "s|tv.png">
+
+  <Control
+    Name = "m_container"
+    Left = "80"
+    Top = "180"
+    Right = "Width - 80"
+    Bottom = "Height"
+    Anchor = "Percent, Top, Percent, Bottom"
+    >
+
+    <MenuList
+      Name = "m_list"
+      Right = "340"
+      Bottom = "360"
+      Anchor = "Left, Top"
+      TextAlign = "Left, Middle"
+      TextHeight = "Height / 20"
+      TextBold = "true"
+      TextMarginLeft = "35"
+      ItemHeight = "m_list.TextHeight * 3 / 2"
+      AutoSelect = "true"
+      m_slider.Visible = "false"
+      />
+
+    <Select
+      Name = "m_presetselect"
+      Left = "m_container.Width - 400"
+      Right = "m_container.Width"
+      Height = "30"
+      TextBold = "true"
+      m_list.ItemHeight = "30"
+      m_dialog.Top = "30"
+      m_dialog.Bottom = "m_video.Height"
+      Anchor = "Right, Top"
+      />
+
+    <Video
+      Name = "m_video"
+      Left = "m_container.Width - 400"
+      Right = "m_container.Width"
+      Top = "40"
+      Height = "300"
+      Anchor = "Right, Top"
+      MirrorEffect = "true"
+      />
+
+    <EPGProgram
+      Name = "m_program"
+      Right = "m_container.Width"
+      Top = "m_container.Height - 225"
+      Height = "5 * 30 + 5"
+      Anchor = "Fill"
+      />
+
+  </Control>
+
+</Menu>

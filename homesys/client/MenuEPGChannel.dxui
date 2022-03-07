@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Menu 
+  Text="sl|EPG"
+  >
+
+  <RecordingStateTextureFactory Name = "m_rstf" />
+
+  <EPGChannelView
+    Name = "m_channelview"
+    Left = "40"
+    Top = "120"
+    Right = "Width / 2 - 10"
+    Bottom = "Height - 100"
+    Anchor = "Left, Top, Middle, Bottom"
+    />
+
+  <EPGProgram
+    Name = "m_program"
+    Left = "Width / 2 + 20"
+    Top = "120"
+    Right = "Width - 40"
+    Bottom = "Height - 100"
+    Anchor = "Middle, Top, Right, Bottom"
+    MoreDescription = "true"
+    />
+
+  <EPGDialog
+    Name = "m_dialog"
+    Left = "Width / 2 - 200"
+    Top = "Height / 2 - 130"
+    Width = "400"
+    Height = "210"
+    Anchor = "Center, Top"
+    m_switch.Enabled = "false"
+    m_details.Enabled = "false"
+    />
+
+</Menu>

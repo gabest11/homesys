@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Menu 
+  m_title.Text = "sl|SEARCH"
+  m_logo.BackgroundImage = "s|tv.png"
+  >
+
+  <ChannelTextureFactory Name = "m_ctf" />
+
+  <Control
+    Name = "m_search"
+    Left = "40"
+    Top = "180"
+    Right = "250"
+    Bottom = "Height - 100"
+    Anchor = "Left">
+
+    <Control
+      Top = "0 * 40"
+      Width = "m_search.Width"
+      Height = "30"
+      Anchor = "Top"
+      Text = "sl|SORT_BY"
+      TextBold = "true"
+      />
+
+    <RadioButton
+      Name = "m_sortby_title"
+      Top = "1 * 40"
+      Width = "m_search.Width"
+      Height = "30"
+      Anchor = "Top"
+      Text = "sl|TITLE"
+      Checked = "true"
+      UserData = "0"
+      />
+
+    <RadioButton
+      Name = "m_sortby_channel"
+      Top = "2 * 40"
+      Width = "m_search.Width"
+      Height = "30"
+      Anchor = "Top"
+      Text = "sl|CHANNEL"
+      UserData = "1"
+      />
+
+    <RadioButton
+      Name = "m_sortby_start"
+      Top = "3 * 40"
+      Width = "m_search.Width"
+      Height = "30"
+      Anchor = "Top"
+      Text = "sl|SORT_BY_START"
+      UserData = "2"
+      />
+
+    <RadioButton
+      Name = "m_sortby_query"
+      Top = "4 * 40"
+      Width = "m_search.Width"
+      Height = "30"
+      Anchor = "Top"
+      Text = "sl|SORT_BY_QUERY"
+      UserData = "3"
+      />
+
+    <Control
+      Top = "5 * 40"
+      Width = "m_search.Width"
+      Height = "30"
+      Anchor = "Top"
+      Text = "sl|SEARCH"
+      TextBold = "true"
+      />
+
+    <Select
+      Name = "m_findby"
+      Top = "6 * 40"
+      Width = "m_search.Width"
+      Height = "30"
+      Anchor = "Top"
+      TextBold = "true"
+      />
+
+    <Edit
+      Name = "m_query"
+      Top = "7 * 40"
+      Width = "m_search.Width"
+      Height = "50"
+      Anchor = "Top"
+      WantReturn = "true"
+      BalloonText = "sl|SEARCH"
+      />
+
+    <ImageButton
+      Name = "m_refresh"
+      Top = "8 * 40"
+      Width = "m_search.Width"
+      Height = "30"
+      Anchor = "Top"
+      Text = "sl|SEARCH"
+      Visible = "false"
+      />
+
+  </Control>
+
+  <List
+    Name = "m_list"
+    Left = "270"
+    Top = "180"
+    Right = "Width - 40"
+    Bottom = "Height - 100"
+    Anchor = "Fill"
+    ItemHeight = "40"
+    >
+
+    <Busy
+      Name = "m_busy"
+      Width = "m_list.Width"
+      Height = "m_list.Height"
+      Anchor = "Fill"
+      Visible = "false"
+      m_background.BackgroundImage = "s|"
+      m_foreground.BackgroundImage = "s|tv.png"
+      />
+    
+  </List>
+  
+</Menu>

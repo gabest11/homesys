@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Menu 
+  Text = "sl|MAIN_MENU">
+
+  <Line
+    Color1 = "0x00ffffff"
+    Color2 = "0xffffffff"
+    Left = "Width / 2"
+    Right = "Width / 2"
+    Top = "200"
+    Bottom = "400 + 1"
+    Anchor = "Center, Top, Center, Percent"
+    />
+
+  <Line
+    Color1 = "0xffffffff"
+    Color2 = "0x00ffffff"
+    Left = "Width / 2"
+    Right = "Width / 2"
+    Top = "400 - 1"
+    Bottom = "600"
+    Anchor = "Center, Percent, Center, Bottom"
+    />
+
+  <Control
+    Name = "m_container" 
+    Left = "Width / 2 - 500"
+    Top = "200"
+    Right = "Width / 2 + 500"
+    Bottom = "Height - 160"
+    Anchor = "Center, Top, Center, Bottom"
+    >
+    
+    <Control 
+      Name = "m_icon" 
+      Left = "50"
+      Right = "450"
+      Bottom = "m_container.Height"
+      Anchor = "Left, Top, Percent, Bottom"
+      BackgroundStyle = "Fit"
+      />
+    
+    <Video
+      Name = "m_video" 
+      Left = "130" 
+      Top = "200" 
+      Width = "240" 
+      Height = "180" 
+      Anchor = "Center, Bottom"
+      MirrorEffect = "true"
+      />
+
+    <MenuList 
+      Name = "m_list" 
+      Left = "600"
+      Right = "900"
+      Bottom = "m_container.Height"
+      Anchor = "Percent, Top, Right, Bottom"
+      TextAlign = "Left, Middle" 
+      TextHeight = "Height / 20"
+      TextBold = "true"
+      TextMarginLeft = "35" 
+      ItemHeight = "m_list.TextHeight * 3 / 2"
+      AutoSelect = "true"
+      m_slider.Visible = "false"
+    />
+
+  </Control>
+
+</Menu>

@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseDevel|Win32">
+      <Configuration>ReleaseDevel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseStatic|Win32">
+      <Configuration>ReleaseStatic</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{C35AE0E0-B7C1-4438-9CBF-ED5BDA62D922}</ProjectGUID>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>dxui</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="dxui.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="..\common.props" />
+    <Import Project="..\debug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="..\common.props" />
+    <Import Project="..\release.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'" Label="PropertySheets">
+    <Import Project="..\common.props" />
+    <Import Project="..\release.props" />
+    <Import Project="..\static.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'" Label="PropertySheets">
+    <Import Project="..\common.props" />
+    <Import Project="..\release.props" />
+    <Import Project="..\devel.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="Banner.h" />
+    <ClInclude Include="Busy.h" />
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="Calendar.h" />
+    <ClInclude Include="CheckButton.h" />
+    <ClInclude Include="Collection.h" />
+    <ClInclude Include="Combo.h" />
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="Control.h" />
+    <ClInclude Include="DateTimePicker.h" />
+    <ClInclude Include="Device.h" />
+    <ClInclude Include="Device10.h" />
+    <ClInclude Include="Device11.h" />
+    <ClInclude Include="Device9.h" />
+    <ClInclude Include="DeviceContext.h" />
+    <ClInclude Include="DeviceContext10.h" />
+    <ClInclude Include="DeviceContext9.h" />
+    <ClInclude Include="Dialog.h" />
+    <ClInclude Include="Downloader.h" />
+    <ClInclude Include="dxui.h" />
+    <ClInclude Include="Edit.h" />
+    <ClInclude Include="Event.h" />
+    <ClInclude Include="ImageButton.h" />
+    <ClInclude Include="Line.h" />
+    <ClInclude Include="LinkButton.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="Localizer.h" />
+    <ClInclude Include="MenuList.h" />
+    <ClInclude Include="Navigator.h" />
+    <ClInclude Include="Numpad.h" />
+    <ClInclude Include="NumpadButton.h" />
+    <ClInclude Include="OKDialog.h" />
+    <ClInclude Include="PixelShader.h" />
+    <ClInclude Include="PixelShader10.h" />
+    <ClInclude Include="PixelShader11.h" />
+    <ClInclude Include="PixelShader9.h" />
+    <ClInclude Include="PlayerWindow.h" />
+    <ClInclude Include="ProgressBar.h" />
+    <ClInclude Include="Property.h" />
+    <ClInclude Include="RadioButton.h" />
+    <ClInclude Include="ResourceLoader.h" />
+    <ClInclude Include="ScrollText.h" />
+    <ClInclude Include="Select.h" />
+    <ClInclude Include="Slider.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Table.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="Texture10.h" />
+    <ClInclude Include="Texture11.h" />
+    <ClInclude Include="Texture9.h" />
+    <ClInclude Include="Thread.h" />
+    <ClInclude Include="WindowManager.h" />
+    <ClInclude Include="YesNoDialog.h" />
+    <ClInclude Include="ZoomList.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Banner.cpp" />
+    <ClCompile Include="Busy.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Calendar.cpp" />
+    <ClCompile Include="CheckButton.cpp" />
+    <ClCompile Include="Collection.cpp" />
+    <ClCompile Include="Combo.cpp" />
+    <ClCompile Include="Common.cpp" />
+    <ClCompile Include="Control.cpp" />
+    <ClCompile Include="DateTimePicker.cpp" />
+    <ClCompile Include="Device.cpp" />
+    <ClCompile Include="Device10.cpp" />
+    <ClCompile Include="Device11.cpp" />
+    <ClCompile Include="Device9.cpp" />
+    <ClCompile Include="DeviceContext.cpp" />
+    <ClCompile Include="DeviceContext10.cpp" />
+    <ClCompile Include="DeviceContext9.cpp" />
+    <ClCompile Include="Dialog.cpp" />
+    <ClCompile Include="Downloader.cpp" />
+    <ClCompile Include="Edit.cpp" />
+    <ClCompile Include="ImageButton.cpp" />
+    <ClCompile Include="Line.cpp" />
+    <ClCompile Include="LinkButton.cpp" />
+    <ClCompile Include="List.cpp" />
+    <ClCompile Include="Localizer.cpp" />
+    <ClCompile Include="MenuList.cpp" />
+    <ClCompile Include="Navigator.cpp" />
+    <ClCompile Include="Numpad.cpp" />
+    <ClCompile Include="NumpadButton.cpp" />
+    <ClCompile Include="OKDialog.cpp" />
+    <ClCompile Include="PlayerWindow.cpp" />
+    <ClCompile Include="ProgressBar.cpp" />
+    <ClCompile Include="RadioButton.cpp" />
+    <ClCompile Include="ResourceLoader.cpp" />
+    <ClCompile Include="ScrollText.cpp" />
+    <ClCompile Include="Select.cpp" />
+    <ClCompile Include="Slider.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Table.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Texture10.cpp" />
+    <ClCompile Include="Texture11.cpp" />
+    <ClCompile Include="Texture9.cpp" />
+    <ClCompile Include="Thread.cpp" />
+    <ClCompile Include="WindowManager.cpp" />
+    <ClCompile Include="YesNoDialog.cpp" />
+    <ClCompile Include="ZoomList.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="convert.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <DXUI Include="Banner.dxui">
+      <SubType>Designer</SubType>
+    </DXUI>
+    <DXUI Include="Busy.dxui" />
+    <DXUI Include="CheckButton.dxui" />
+    <DXUI Include="Combo.dxui" />
+    <DXUI Include="DateTimePicker.dxui" />
+    <DXUI Include="ImageButton.dxui" />
+    <DXUI Include="LinkButton.dxui" />
+    <DXUI Include="List.dxui">
+      <SubType>Designer</SubType>
+    </DXUI>
+    <DXUI Include="MenuList.dxui" />
+    <DXUI Include="Numpad.dxui" />
+    <DXUI Include="ProgressBar.dxui" />
+    <DXUI Include="RadioButton.dxui" />
+    <DXUI Include="ScrollText.dxui" />
+    <DXUI Include="Select.dxui" />
+    <DXUI Include="Slider.dxui" />
+    <DXUI Include="YesNoDialog.dxui" />
+    <DXUI Include="ZoomList.dxui">
+      <SubType>Designer</SubType>
+    </DXUI>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="dxui.targets" />
+  </ImportGroup>
+</Project>

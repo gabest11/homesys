@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Browser>
+  
+  <Table
+    Name = "m_table"
+    Width = "Width"
+    Height = "Height"
+    Anchor = "Fill"
+    TextAlign = "Left, Bottom"
+    TextHeight = "25"
+    TextBold = "true"
+    ThumbCountH = "5"
+    ThumbCountV = "3"
+    ThumbGapX = "5"
+    ThumbGapY = "5"
+    TabLeft = "false"
+    TabRight = "false"
+    TabBottom = "false"
+  />
+  
+</Browser>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control
+  ItemBackgroundImage = "s|MenuListItemBackground.png"
+  ItemBackgroundMargin = "25, 0, 25, 0"
+  SelectedBackgroundImage = "s|MenuListSelectedBackground.png"
+  SelectedBackgroundMargin = "25, 0, 25, 0"
+  TextAlign = "Center, Middle"
+  TextHeight = "35"
+  CanFocus = "1"
+	TabBottom = "false"
+	TabTop = "false"
+  >
+
+  <Property Name = "ItemBackgroundImage" Type = "std::wstring" />
+  <Property Name = "ItemBackgroundMargin" Type = "Vector4i" />
+  <Property Name = "SelectedBackgroundImage" Type = "std::wstring" />
+  <Property Name = "SelectedBackgroundMargin" Type = "Vector4i" />
+
+  <Slider 
+    Name = "m_slider" 
+    Left = "Width - 35"
+    Top = "0"
+    Right = "Width"
+    Bottom = "Height"
+    Anchor = "Right"
+    Vertical = "true"
+    />
+
+</Control>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<MenuWizard
+  m_title.Text = "sl|SETTINGS"
+  m_logo.BackgroundImage = "s|setting_common.png"
+  >
+
+  <Control Left = "m_wizard.Left" Top = "160" Right = "m_wizard.Right" Bottom = "m_wizard.Top" Anchor = "Center, Top">
+
+    <Control Top = "0*45" Anchor = "Top">
+      <Control Width = "280" Height = "30" Text = "sl|USERNAME" TextAlign = "Left, Middle" TextHeight = "28" />
+      <Edit Name = "m_username" Left = "290" Width = "200" Height = "30" />
+      <Line Top = "37" Width = "m_wizard.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    </Control>
+
+    <Control Top = "1*45" Anchor = "Top">
+      <Control Width = "280" Height = "30" Text = "sl|PASSWORD" TextAlign = "Left, Middle" TextHeight = "28"  />
+      <Edit Name = "m_password" Left = "290" Width = "200" Height = "30" Password = "true" />
+      <Line Top = "37" Width = "m_wizard.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    </Control>
+
+    <Control Top = "2*45" Anchor = "Top">
+      <Control Width = "280" Height = "30" Text = "sl|SETTINGS_DIR_DOWNLOADS" TextAlign = "Left, Middle" TextHeight = "28" />
+      <Edit Name = "m_download_path" Left = "290" Width = "m_wizard.Width - 290" Height = "30" Anchor = "Top" />
+      <Line Top = "37" Width = "m_wizard.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    </Control>
+
+    <Control Top = "3*45" Anchor = "Top">
+      <Control Width = "280" Height = "30" Text = "sl|SETTINGS_DIR_RECORDINGS" TextAlign = "Left, Middle" TextHeight = "28" />
+      <Edit Name = "m_recording_path" Left = "290" Right = "m_wizard.Width - 150" Height = "30" Anchor = "Top" />
+      <Select Name = "m_recording_format" Left = "m_wizard.Width - 140" Right = "m_wizard.Width" Height = "30" />
+      <Line Top = "37" Width = "m_wizard.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    </Control>
+
+    <Control Top = "4*45" Anchor = "Top">
+      <Control Width = "280" Height = "30" Text = "sl|SETTINGS_DIR_TEMP" TextAlign = "Left, Middle" TextHeight = "28" />
+      <Edit Name = "m_recording_temp_path" Left = "290" Width = "m_wizard.Width - 290" Height = "30" Anchor = "Top" />
+      <Line Top = "37" Width = "m_wizard.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    </Control>
+
+    <Control Top = "5*45" Anchor = "Top">
+      <Control Width = "280" Height = "30" Text = "sl|SETTINGS_BUFFER_SIZE" TextAlign = "Left, Middle" TextHeight = "28" />
+      <Select Name = "m_recording_temp_duration" Left = "290" Width = "200" Height = "30" />
+      <Line Top = "37" Width = "m_wizard.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    </Control>
+
+    <Control Top = "6*45" Anchor = "Top">
+      <Control Width = "280" Height = "30" Text = "sl|SETTINGS_LANGUAGE" TextAlign = "Left, Middle" TextHeight = "28" />
+      <Select Name = "m_language" Left = "290" Width = "200" Height = "30" MinListWidth = "300" />
+      <Control Left = "500" Width = "300" Height = "30" Text = "sl|SETTINGS_RESTART_NEEDED" TextAlign = "Left, Middle" TextHeight = "28" Anchor = "Fill" />
+      <Line Top = "37" Width = "m_wizard.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    </Control>
+
+    <Control Top = "7*45" Anchor = "Top">
+      <Control Width = "280" Height = "30" Text = "sl|SETTINGS_REGION" TextAlign = "Left, Middle" TextHeight = "28" />
+      <Select Name = "m_region" Left = "290" Width = "200" Height = "30" MinListWidth = "300" />
+      <Line Top = "37" Width = "m_wizard.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    </Control>
+
+    <Control Top = "8*45" Anchor = "Top">
+      <Control Width = "280" Height = "30" Text = "sl|SETTINGS_SKIN" TextAlign = "Left, Middle" TextHeight = "28" />
+      <Select Name = "m_skin" Left = "290" Width = "200" Height = "30" />
+      <Control Left = "500" Width = "300" Height = "30" Text = "sl|SETTINGS_RESTART_NEEDED" TextAlign = "Left, Middle" TextHeight = "28" Anchor = "Fill" />
+      <Line Top = "37" Width = "m_wizard.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    </Control>
+
+    <Control Top = "9*45" Anchor = "Top">
+      <Control Width = "280" Height = "30" Text = "sl|SETTINGS_VERSION" TextAlign = "Left, Middle" TextHeight = "28" />
+      <Control Name = "m_version_info" Left = "290" Width = "100" Height = "30" />
+      <ProgressBar Name = "m_progressbar" Left = "400" Right = "m_wizard.Width - 160" Height = "30" Visible = "false" Indicator = "false" />
+      <ImageButton Name = "m_update" Left = "m_wizard.Width - 150" Width = "150" Height = "30" Text = "sl|UPDATE" Enabled = "false" />
+      <!--Line Top = "37" Width = "m_wizard.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" /-->
+    </Control>
+
+  </Control>
+
+</MenuWizard>

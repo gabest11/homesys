@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" name="Homesys" targetNamespace="http://homesyslite.timbuktu.hu/" xmlns:tns="http://homesyslite.timbuktu.hu/" xmlns:impl="http://homesyslite.timbuktu.hu/" xmlns:xsd1="http://homesyslite.timbuktu.hu/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mst="http://microsoft.com/wsdl/types/">
+  <types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://homesyslite.timbuktu.hu/">
+      <complexType name="UserInfo">
+        <sequence>
+          <element name="Email" type="xsd:string"/>
+          <element name="FirstName" type="xsd:string"/>
+          <element name="LastName" type="xsd:string"/>
+          <element name="Country" type="xsd:string"/>
+          <element name="Address" type="xsd:string"/>
+          <element name="PostalCode" type="xsd:string"/>
+          <element name="PhoneNumber" type="xsd:string"/>
+          <element name="Gender" type="xsd:string"/>
+          <element name="ParentalAge" type="xsd:int"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfTunerData">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:TunerData[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="TunerData">
+        <sequence>
+          <element name="SequenceNumber" type="xsd:int"/>
+          <element name="ClientTunerData" type="xsd:string"/>
+          <element name="FriendlyName" type="xsd:string"/>
+          <element name="DisplayName" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="MachineRegistrationData">
+        <sequence>
+          <element name="MachineId" type="mst:guid"/>
+          <element name="TunerList" type="tns:ArrayOfTuner"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfTuner">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Tuner[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="Tuner">
+        <sequence>
+          <element name="SequenceNumber" type="xsd:int"/>
+          <element name="Id" type="mst:guid"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfMachine">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Machine[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="Machine">
+        <sequence>
+          <element name="Id" type="mst:guid"/>
+          <element name="Name" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfRecording">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Recording[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="Recording">
+        <sequence>
+          <element name="Id" type="xsd:int"/>
+          <element name="ProgramId" type="xsd:int"/>
+          <element name="RecordingState" type="xsd:string"/>
+          <element name="StateText" type="xsd:string"/>
+          <element name="MachineId" type="mst:guid"/>
+          <element name="ChannelId" type="xsd:int"/>
+          <element name="StartDate" type="xsd:dateTime"/>
+          <element name="StopDate" type="xsd:dateTime"/>
+          <element name="TunerId" type="mst:guid"/>
+        </sequence>
+      </complexType>
+      <complexType name="AppVersion">
+        <sequence>
+          <element name="Version" type="xsd:string"/>
+          <element name="Url" type="xsd:string"/>
+          <element name="Required" type="xsd:boolean"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfTuneRequestPackage">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:TuneRequestPackage[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="TuneRequestPackage">
+        <sequence>
+          <element name="Type" type="xsd:string"/>
+          <element name="Provider" type="xsd:string"/>
+          <element name="Name" type="xsd:string"/>
+          <element name="TuneRequests" type="tns:ArrayOfTuneRequest"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfTuneRequest">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:TuneRequest[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="TuneRequest">
+        <sequence>
+          <element name="Frequency" type="xsd:int"/>
+          <element name="VideoStandard" type="xsd:int"/>
+          <element name="IFECMethod" type="xsd:int"/>
+          <element name="IFECRate" type="xsd:int"/>
+          <element name="OFECMethod" type="xsd:int"/>
+          <element name="OFECRate" type="xsd:int"/>
+          <element name="Modulation" type="xsd:int"/>
+          <element name="SymbolRate" type="xsd:int"/>
+          <element name="Polarisation" type="xsd:int"/>
+          <element name="LNBSource" type="xsd:int"/>
+          <element name="SpectralInversion" type="xsd:int"/>
+          <element name="Bandwidth" type="xsd:int"/>
+          <element name="LPIFECMethod" type="xsd:int"/>
+          <element name="LPIFECRate" type="xsd:int"/>
+          <element name="HAlpha" type="xsd:int"/>
+          <element name="Guard" type="xsd:int"/>
+          <element name="TransmissionMode" type="xsd:int"/>
+          <element name="OtherFrequencyInUse" type="xsd:boolean"/>
+          <element name="Path" type="xsd:string"/>
+          <element name="ChannelId" type="xsd:int"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfChannel">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Channel[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="Channel">
+        <sequence>
+          <element name="Id" type="xsd:int"/>
+          <element name="Name" type="xsd:string"/>
+          <element name="Url" type="xsd:string"/>
+          <element name="Logo" type="xsd:base64Binary"/>
+          <element name="Radio" type="xsd:boolean"/>
+          <element name="Aliases" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfint">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:int[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfstring">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:string[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOfProgram">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Program[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="Program">
+        <sequence>
+          <element name="Id" type="xsd:int"/>
+          <element name="ChannelId" type="xsd:int"/>
+          <element name="EpisodeId" type="xsd:int"/>
+          <element name="MovieId" type="xsd:int"/>
+          <element name="StartDate" type="xsd:dateTime"/>
+          <element name="StopDate" type="xsd:dateTime"/>
+          <element name="IsRepeat" type="xsd:boolean"/>
+          <element name="IsLive" type="xsd:boolean"/>
+          <element name="IsRecommended" type="xsd:boolean"/>
+          <element name="Deleted" type="xsd:boolean"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfEpisode">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Episode[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="Episode">
+        <sequence>
+          <element name="Id" type="xsd:int"/>
+          <element name="MovieId" type="xsd:int"/>
+          <element name="Title" type="xsd:string"/>
+          <element name="Description" type="xsd:string"/>
+          <element name="EpisodeNumber" type="xsd:int"/>
+          <element name="Temp" type="xsd:boolean"/>
+          <element name="EpisodeCastList" type="tns:ArrayOfEpisodeCast"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfEpisodeCast">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:EpisodeCast[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="EpisodeCast">
+        <sequence>
+          <element name="CastId" type="xsd:int"/>
+          <element name="RoleId" type="xsd:int"/>
+          <element name="Name" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfMovie">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Movie[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="Movie">
+        <sequence>
+          <element name="Id" type="xsd:int"/>
+          <element name="MovieTypeId" type="xsd:int"/>
+          <element name="DVBCategoryId" type="xsd:int"/>
+          <element name="Title" type="xsd:string"/>
+          <element name="Description" type="xsd:string"/>
+          <element name="Rating" type="xsd:int"/>
+          <element name="Year" type="xsd:int"/>
+          <element name="EpisodeCount" type="xsd:int"/>
+          <element name="Temp" type="xsd:boolean"/>
+          <element name="HasPicture" type="xsd:boolean"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfCast">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:Cast[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="Cast">
+        <sequence>
+          <element name="Id" type="xsd:int"/>
+          <element name="Name" type="xsd:string"/>
+          <element name="MovieName" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfMovieType">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:MovieType[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="MovieType">
+        <sequence>
+          <element name="Id" type="xsd:int"/>
+          <element name="NameShort" type="xsd:string"/>
+          <element name="NameLong" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfDVBCategory">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:DVBCategory[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="DVBCategory">
+        <sequence>
+          <element name="Id" type="xsd:int"/>
+          <element name="Name" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfRelatedProgram">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:RelatedProgram[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="RelatedProgram">
+        <sequence>
+          <element name="Id" type="xsd:int"/>
+          <element name="OtherId" type="xsd:int"/>
+          <element name="Type" type="xsd:int"/>
+        </sequence>
+      </complexType>
+      <complexType name="EPG">
+        <sequence>
+          <element name="Date" type="xsd:dateTime"/>
+          <element name="TuneRequestPackages" type="tns:ArrayOfTuneRequestPackage"/>
+          <element name="Channels" type="tns:ArrayOfChannel"/>
+          <element name="Programs" type="tns:ArrayOfProgram"/>
+          <element name="Episodes" type="tns:ArrayOfEpisode"/>
+          <element name="Movies" type="tns:ArrayOfMovie"/>
+          <element name="Casts" type="tns:ArrayOfCast"/>
+          <element name="MovieTypes" type="tns:ArrayOfMovieType"/>
+          <element name="DVBCategories" type="tns:ArrayOfDVBCategory"/>
+        </sequence>
+      </complexType>
+      <complexType name="EPGLocation">
+        <sequence>
+          <element name="Date" type="xsd:dateTime"/>
+          <element name="Url" type="xsd:string"/>
+          <element name="JsonUrl" type="xsd:string"/>
+          <element name="BZip2Url" type="xsd:string"/>
+          <element name="JsonBZip2Url" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="Guide">
+        <sequence>
+          <element name="Page" type="xsd:int"/>
+          <element name="MaxPage" type="xsd:int"/>
+          <element name="MinDate" type="xsd:dateTime"/>
+          <element name="MaxDate" type="xsd:dateTime"/>
+          <element name="Channels" type="tns:ArrayOfGuideChannel"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfGuideChannel">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:GuideChannel[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="GuideChannel">
+        <sequence>
+          <element name="Id" type="xsd:int"/>
+          <element name="Name" type="xsd:string"/>
+          <element name="Url" type="xsd:string"/>
+          <element name="Logo" type="xsd:base64Binary"/>
+          <element name="Radio" type="xsd:boolean"/>
+          <element name="Aliases" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfGuideProgram">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:GuideProgram[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="GuideProgram">
+        <sequence>
+          <element name="Id" type="xsd:int"/>
+          <element name="StartDate" type="xsd:dateTime"/>
+          <element name="StopDate" type="xsd:dateTime"/>
+          <element name="Title" type="xsd:string"/>
+          <element name="EpisodeTitle" type="xsd:string"/>
+          <element name="Description" type="xsd:string"/>
+          <element name="EpisodeNumber" type="xsd:int"/>
+          <element name="EpisodeCount" type="xsd:int"/>
+          <element name="IsRepeat" type="xsd:boolean"/>
+          <element name="IsLive" type="xsd:boolean"/>
+          <element name="Rating" type="xsd:int"/>
+          <element name="Year" type="xsd:int"/>
+          <element name="MovieType" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfGuideProgramRecStat">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:GuideProgramRecStat[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="GuideProgramRecStat">
+        <sequence>
+          <element name="ProgramId" type="xsd:int"/>
+          <element name="StartDate" type="xsd:dateTime"/>
+          <element name="Title" type="xsd:string"/>
+          <element name="Count" type="xsd:int"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfGuideMovieRecStat">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:GuideMovieRecStat[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="GuideMovieRecStat">
+        <sequence>
+          <element name="MovieId" type="xsd:int"/>
+          <element name="Title" type="xsd:string"/>
+          <element name="Count" type="xsd:int"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfTvStat">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:TvStat[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="TvStat">
+        <sequence>
+          <element name="ChannelId" type="xsd:int"/>
+          <element name="ProgramId" type="xsd:int"/>
+          <element name="Start" type="xsd:dateTime"/>
+          <element name="Stop" type="xsd:dateTime"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfUserTvStat">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns:UserTvStat[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="UserTvStat">
+        <sequence>
+          <element name="Username" type="xsd:string"/>
+          <element name="WatchList" type="tns:ArrayOfTvStat"/>
+        </sequence>
+      </complexType>
+    </schema>
+  </types>
+  <portType name="HomesysPortType">
+    <operation name="InitiateSession" parameterOrder="username password">
+      <input message="tns:InitiateSessionRequest"/>
+      <output message="tns:InitiateSessionResponse"/>
+    </operation>
+    <operation name="SetLanguage" parameterOrder="sessionId lang">
+      <input message="tns:SetLanguageRequest"/>
+    </operation>
+    <operation name="InitiateSessionWithLang" parameterOrder="username password lang">
+      <input message="tns:InitiateSessionWithLangRequest"/>
+      <output message="tns:InitiateSessionWithLangResponse"/>
+    </operation>
+    <operation name="UserExists" parameterOrder="username">
+      <input message="tns:UserExistsRequest"/>
+      <output message="tns:UserExistsResponse"/>
+    </operation>
+    <operation name="LoginExists" parameterOrder="username password">
+      <input message="tns:LoginExistsRequest"/>
+      <output message="tns:LoginExistsResponse"/>
+    </operation>
+    <operation name="RegisterUser" parameterOrder="username password email">
+      <input message="tns:RegisterUserRequest"/>
+      <output message="tns:RegisterUserResponse"/>
+    </operation>
+    <operation name="Register" parameterOrder="sessionId username password email">
+      <input message="tns:RegisterRequest"/>
+      <output message="tns:RegisterResponse"/>
+    </operation>
+    <operation name="SetUserInfo" parameterOrder="sessionId userInfo">
+      <input message="tns:SetUserInfoRequest"/>
+    </operation>
+    <operation name="GetUserInfo" parameterOrder="sessionId">
+      <input message="tns:GetUserInfoRequest"/>
+      <output message="tns:GetUserInfoResponse"/>
+    </operation>
+    <operation name="RegisterMachine" parameterOrder="sessionId machineName tunerDataList">
+      <input message="tns:RegisterMachineRequest"/>
+      <output message="tns:RegisterMachineResponse"/>
+    </operation>
+    <operation name="UnregisterMachine" parameterOrder="sessionId machineId">
+      <input message="tns:UnregisterMachineRequest"/>
+    </operation>
+    <operation name="ListMachines" parameterOrder="sessionId">
+      <input message="tns:ListMachinesRequest"/>
+      <output message="tns:ListMachinesResponse"/>
+    </operation>
+    <operation name="AddRecording" parameterOrder="sessionId machineId programId">
+      <input message="tns:AddRecordingRequest"/>
+      <output message="tns:AddRecordingResponse"/>
+    </operation>
+    <operation name="UpdateRecording" parameterOrder="sessionId recordingId recordingState">
+      <input message="tns:UpdateRecordingRequest"/>
+    </operation>
+    <operation name="DeleteRecording" parameterOrder="sessionId recordingId">
+      <input message="tns:DeleteRecordingRequest"/>
+    </operation>
+    <operation name="ListRecordings" parameterOrder="sessionId futureOnly">
+      <input message="tns:ListRecordingsRequest"/>
+      <output message="tns:ListRecordingsResponse"/>
+    </operation>
+    <operation name="AddRecordingByPortId" parameterOrder="sessionId programId">
+      <input message="tns:AddRecordingByPortIdRequest"/>
+      <output message="tns:AddRecordingByPortIdResponse"/>
+    </operation>
+    <operation name="DeleteRecordingByPortId" parameterOrder="sessionId programId">
+      <input message="tns:DeleteRecordingByPortIdRequest"/>
+    </operation>
+    <operation name="ListRecordingsByPortId" parameterOrder="sessionId futureOnly">
+      <input message="tns:ListRecordingsByPortIdRequest"/>
+      <output message="tns:ListRecordingsByPortIdResponse"/>
+    </operation>
+    <operation name="GetAppVersion" parameterOrder="name version">
+      <input message="tns:GetAppVersionRequest"/>
+      <output message="tns:GetAppVersionResponse"/>
+    </operation>
+    <operation name="VersionCheck">
+      <input message="tns:VersionCheckRequest"/>
+      <output message="tns:VersionCheckResponse"/>
+    </operation>
+    <operation name="BeginUpdate" parameterOrder="sessionId">
+      <input message="tns:BeginUpdateRequest"/>
+      <output message="tns:BeginUpdateResponse"/>
+    </operation>
+    <operation name="EndUpdate" parameterOrder="sessionId">
+      <input message="tns:EndUpdateRequest"/>
+    </operation>
+    <operation name="GetTuneRequestPackages" parameterOrder="sessionId timestamp">
+      <input message="tns:GetTuneRequestPackagesRequest"/>
+      <output message="tns:GetTuneRequestPackagesResponse"/>
+    </operation>
+    <operation name="GetTuneRequestPackagesForRegion" parameterOrder="sessionId region timestamp">
+      <input message="tns:GetTuneRequestPackagesForRegionRequest"/>
+      <output message="tns:GetTuneRequestPackagesForRegionResponse"/>
+    </operation>
+    <operation name="GetChannels" parameterOrder="sessionId timestamp">
+      <input message="tns:GetChannelsRequest"/>
+      <output message="tns:GetChannelsResponse"/>
+    </operation>
+    <operation name="GetChannelRank" parameterOrder="sessionId">
+      <input message="tns:GetChannelRankRequest"/>
+      <output message="tns:GetChannelRankResponse"/>
+    </operation>
+    <operation name="SetUnknownChannels" parameterOrder="sessionId regionId names">
+      <input message="tns:SetUnknownChannelsRequest"/>
+    </operation>
+    <operation name="GetMovieRank" parameterOrder="sessionId">
+      <input message="tns:GetMovieRankRequest"/>
+      <output message="tns:GetMovieRankResponse"/>
+    </operation>
+    <operation name="GetPrograms" parameterOrder="sessionId timestamp">
+      <input message="tns:GetProgramsRequest"/>
+      <output message="tns:GetProgramsResponse"/>
+    </operation>
+    <operation name="GetEpisodes" parameterOrder="sessionId timestamp">
+      <input message="tns:GetEpisodesRequest"/>
+      <output message="tns:GetEpisodesResponse"/>
+    </operation>
+    <operation name="GetMovies" parameterOrder="sessionId timestamp">
+      <input message="tns:GetMoviesRequest"/>
+      <output message="tns:GetMoviesResponse"/>
+    </operation>
+    <operation name="GetCast" parameterOrder="sessionId timestamp">
+      <input message="tns:GetCastRequest"/>
+      <output message="tns:GetCastResponse"/>
+    </operation>
+    <operation name="GetMovieTypes" parameterOrder="sessionId timestamp">
+      <input message="tns:GetMovieTypesRequest"/>
+      <output message="tns:GetMovieTypesResponse"/>
+    </operation>
+    <operation name="GetDVBCategory" parameterOrder="sessionId timestamp">
+      <input message="tns:GetDVBCategoryRequest"/>
+      <output message="tns:GetDVBCategoryResponse"/>
+    </operation>
+    <operation name="GetRelatedPrograms" parameterOrder="sessionId">
+      <input message="tns:GetRelatedProgramsRequest"/>
+      <output message="tns:GetRelatedProgramsResponse"/>
+    </operation>
+    <operation name="GetEPG" parameterOrder="sessionId timestamp">
+      <input message="tns:GetEPGRequest"/>
+      <output message="tns:GetEPGResponse"/>
+    </operation>
+    <operation name="GetEPGLocation" parameterOrder="sessionId timestamp region">
+      <input message="tns:GetEPGLocationRequest"/>
+      <output message="tns:GetEPGLocationResponse"/>
+    </operation>
+    <operation name="GetNow">
+      <input message="tns:GetNowRequest"/>
+      <output message="tns:GetNowResponse"/>
+    </operation>
+    <operation name="SearchMovie" parameterOrder="sessionId str">
+      <input message="tns:SearchMovieRequest"/>
+      <output message="tns:SearchMovieResponse"/>
+    </operation>
+    <operation name="GetGuide" parameterOrder="sessionId">
+      <input message="tns:GetGuideRequest"/>
+      <output message="tns:GetGuideResponse"/>
+    </operation>
+    <operation name="GetGuideProgram" parameterOrder="sessionId channelId startDate stopDate">
+      <input message="tns:GetGuideProgramRequest"/>
+      <output message="tns:GetGuideProgramResponse"/>
+    </operation>
+    <operation name="GetGuideProgramRecStat" parameterOrder="sessionId channelId">
+      <input message="tns:GetGuideProgramRecStatRequest"/>
+      <output message="tns:GetGuideProgramRecStatResponse"/>
+    </operation>
+    <operation name="GetGuideMovieRecStat" parameterOrder="sessionId channelId">
+      <input message="tns:GetGuideMovieRecStatRequest"/>
+      <output message="tns:GetGuideMovieRecStatResponse"/>
+    </operation>
+    <operation name="SendTvStat" parameterOrder="sessionId stat">
+      <input message="tns:SendTvStatRequest"/>
+    </operation>
+    <operation name="GetTvStatByPortId" parameterOrder="sessionId date">
+      <input message="tns:GetTvStatByPortIdRequest"/>
+      <output message="tns:GetTvStatByPortIdResponse"/>
+    </operation>
+  </portType>
+  <binding name="HomesysBinding" type="tns:HomesysPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="InitiateSession">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#InitiateSession"/>
+      <input>
+        <soap:body parts="username password" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="SetLanguage">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#SetLanguage"/>
+      <input>
+        <soap:body parts="sessionId lang" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+    </operation>
+    <operation name="InitiateSessionWithLang">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#InitiateSessionWithLang"/>
+      <input>
+        <soap:body parts="username password lang" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="UserExists">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#UserExists"/>
+      <input>
+        <soap:body parts="username" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="LoginExists">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#LoginExists"/>
+      <input>
+        <soap:body parts="username password" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="RegisterUser">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#RegisterUser"/>
+      <input>
+        <soap:body parts="username password email" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="Register">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#Register"/>
+      <input>
+        <soap:body parts="sessionId username password email" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="SetUserInfo">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#SetUserInfo"/>
+      <input>
+        <soap:body parts="sessionId userInfo" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+    </operation>
+    <operation name="GetUserInfo">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetUserInfo"/>
+      <input>
+        <soap:body parts="sessionId" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="RegisterMachine">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#RegisterMachine"/>
+      <input>
+        <soap:body parts="sessionId machineName tunerDataList" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="UnregisterMachine">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#UnregisterMachine"/>
+      <input>
+        <soap:body parts="sessionId machineId" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+    </operation>
+    <operation name="ListMachines">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#ListMachines"/>
+      <input>
+        <soap:body parts="sessionId" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="AddRecording">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#AddRecording"/>
+      <input>
+        <soap:body parts="sessionId machineId programId" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="UpdateRecording">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#UpdateRecording"/>
+      <input>
+        <soap:body parts="sessionId recordingId recordingState" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+    </operation>
+    <operation name="DeleteRecording">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#DeleteRecording"/>
+      <input>
+        <soap:body parts="sessionId recordingId" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+    </operation>
+    <operation name="ListRecordings">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#ListRecordings"/>
+      <input>
+        <soap:body parts="sessionId futureOnly" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="AddRecordingByPortId">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#AddRecordingByPortId"/>
+      <input>
+        <soap:body parts="sessionId programId" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="DeleteRecordingByPortId">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#DeleteRecordingByPortId"/>
+      <input>
+        <soap:body parts="sessionId programId" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+    </operation>
+    <operation name="ListRecordingsByPortId">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#ListRecordingsByPortId"/>
+      <input>
+        <soap:body parts="sessionId futureOnly" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetAppVersion">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetAppVersion"/>
+      <input>
+        <soap:body parts="name version" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="VersionCheck">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#VersionCheck"/>
+      <input>
+        <soap:body use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="BeginUpdate">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#BeginUpdate"/>
+      <input>
+        <soap:body parts="sessionId" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="EndUpdate">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#EndUpdate"/>
+      <input>
+        <soap:body parts="sessionId" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+    </operation>
+    <operation name="GetTuneRequestPackages">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetTuneRequestPackages"/>
+      <input>
+        <soap:body parts="sessionId timestamp" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetTuneRequestPackagesForRegion">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetTuneRequestPackagesForRegion"/>
+      <input>
+        <soap:body parts="sessionId region timestamp" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetChannels">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetChannels"/>
+      <input>
+        <soap:body parts="sessionId timestamp" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetChannelRank">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetChannelRank"/>
+      <input>
+        <soap:body parts="sessionId" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="SetUnknownChannels">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#SetUnknownChannels"/>
+      <input>
+        <soap:body parts="sessionId regionId names" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+    </operation>
+    <operation name="GetMovieRank">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetMovieRank"/>
+      <input>
+        <soap:body parts="sessionId" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetPrograms">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetPrograms"/>
+      <input>
+        <soap:body parts="sessionId timestamp" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetEpisodes">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetEpisodes"/>
+      <input>
+        <soap:body parts="sessionId timestamp" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetMovies">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetMovies"/>
+      <input>
+        <soap:body parts="sessionId timestamp" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetCast">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetCast"/>
+      <input>
+        <soap:body parts="sessionId timestamp" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetMovieTypes">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetMovieTypes"/>
+      <input>
+        <soap:body parts="sessionId timestamp" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetDVBCategory">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetDVBCategory"/>
+      <input>
+        <soap:body parts="sessionId timestamp" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetRelatedPrograms">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetRelatedPrograms"/>
+      <input>
+        <soap:body parts="sessionId" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetEPG">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetEPG"/>
+      <input>
+        <soap:body parts="sessionId timestamp" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetEPGLocation">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetEPGLocation"/>
+      <input>
+        <soap:body parts="sessionId timestamp region" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetNow">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetNow"/>
+      <input>
+        <soap:body use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="SearchMovie">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#SearchMovie"/>
+      <input>
+        <soap:body parts="sessionId str" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetGuide">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetGuide"/>
+      <input>
+        <soap:body parts="sessionId" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetGuideProgram">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetGuideProgram"/>
+      <input>
+        <soap:body parts="sessionId channelId startDate stopDate" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetGuideProgramRecStat">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetGuideProgramRecStat"/>
+      <input>
+        <soap:body parts="sessionId channelId" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetGuideMovieRecStat">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetGuideMovieRecStat"/>
+      <input>
+        <soap:body parts="sessionId channelId" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="SendTvStat">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#SendTvStat"/>
+      <input>
+        <soap:body parts="sessionId stat" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+    </operation>
+    <operation name="GetTvStatByPortId">
+      <soap:operation soapAction="urn:Homesys#HomesysServer#GetTvStatByPortId"/>
+      <input>
+        <soap:body parts="sessionId date" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body parts="return" use="encoded" namespace="http://homesyslite.timbuktu.hu/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+  <message name="InitiateSessionRequest">
+    <part name="username" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+  </message>
+  <message name="InitiateSessionResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="SetLanguageRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="lang" type="xsd:string"/>
+  </message>
+  <message name="InitiateSessionWithLangRequest">
+    <part name="username" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+    <part name="lang" type="xsd:string"/>
+  </message>
+  <message name="InitiateSessionWithLangResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="UserExistsRequest">
+    <part name="username" type="xsd:string"/>
+  </message>
+  <message name="UserExistsResponse">
+    <part name="return" type="xsd:boolean"/>
+  </message>
+  <message name="LoginExistsRequest">
+    <part name="username" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+  </message>
+  <message name="LoginExistsResponse">
+    <part name="return" type="xsd:boolean"/>
+  </message>
+  <message name="RegisterUserRequest">
+    <part name="username" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+    <part name="email" type="xsd:string"/>
+  </message>
+  <message name="RegisterUserResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="RegisterRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="username" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+    <part name="email" type="xsd:string"/>
+  </message>
+  <message name="RegisterResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="SetUserInfoRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="userInfo" type="tns:UserInfo"/>
+  </message>
+  <message name="GetUserInfoRequest">
+    <part name="sessionId" type="xsd:string"/>
+  </message>
+  <message name="GetUserInfoResponse">
+    <part name="return" type="tns:UserInfo"/>
+  </message>
+  <message name="RegisterMachineRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="machineName" type="xsd:string"/>
+    <part name="tunerDataList" type="tns:ArrayOfTunerData"/>
+  </message>
+  <message name="RegisterMachineResponse">
+    <part name="return" type="tns:MachineRegistrationData"/>
+  </message>
+  <message name="UnregisterMachineRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="machineId" type="mst:guid"/>
+  </message>
+  <message name="ListMachinesRequest">
+    <part name="sessionId" type="xsd:string"/>
+  </message>
+  <message name="ListMachinesResponse">
+    <part name="return" type="tns:ArrayOfMachine"/>
+  </message>
+  <message name="AddRecordingRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="machineId" type="mst:guid"/>
+    <part name="programId" type="xsd:int"/>
+  </message>
+  <message name="AddRecordingResponse">
+    <part name="return" type="xsd:int"/>
+  </message>
+  <message name="UpdateRecordingRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="recordingId" type="xsd:int"/>
+    <part name="recordingState" type="xsd:string"/>
+  </message>
+  <message name="DeleteRecordingRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="recordingId" type="xsd:int"/>
+  </message>
+  <message name="ListRecordingsRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="futureOnly" type="xsd:boolean"/>
+  </message>
+  <message name="ListRecordingsResponse">
+    <part name="return" type="tns:ArrayOfRecording"/>
+  </message>
+  <message name="AddRecordingByPortIdRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="programId" type="xsd:int"/>
+  </message>
+  <message name="AddRecordingByPortIdResponse">
+    <part name="return" type="xsd:int"/>
+  </message>
+  <message name="DeleteRecordingByPortIdRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="programId" type="xsd:int"/>
+  </message>
+  <message name="ListRecordingsByPortIdRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="futureOnly" type="xsd:boolean"/>
+  </message>
+  <message name="ListRecordingsByPortIdResponse">
+    <part name="return" type="tns:ArrayOfRecording"/>
+  </message>
+  <message name="GetAppVersionRequest">
+    <part name="name" type="xsd:string"/>
+    <part name="version" type="xsd:string"/>
+  </message>
+  <message name="GetAppVersionResponse">
+    <part name="return" type="tns:AppVersion"/>
+  </message>
+  <message name="VersionCheckRequest"/>
+  <message name="VersionCheckResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="BeginUpdateRequest">
+    <part name="sessionId" type="xsd:string"/>
+  </message>
+  <message name="BeginUpdateResponse">
+    <part name="return" type="xsd:dateTime"/>
+  </message>
+  <message name="EndUpdateRequest">
+    <part name="sessionId" type="xsd:string"/>
+  </message>
+  <message name="GetTuneRequestPackagesRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="timestamp" type="xsd:dateTime"/>
+  </message>
+  <message name="GetTuneRequestPackagesResponse">
+    <part name="return" type="tns:ArrayOfTuneRequestPackage"/>
+  </message>
+  <message name="GetTuneRequestPackagesForRegionRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="region" type="xsd:string"/>
+    <part name="timestamp" type="xsd:dateTime"/>
+  </message>
+  <message name="GetTuneRequestPackagesForRegionResponse">
+    <part name="return" type="tns:ArrayOfTuneRequestPackage"/>
+  </message>
+  <message name="GetChannelsRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="timestamp" type="xsd:dateTime"/>
+  </message>
+  <message name="GetChannelsResponse">
+    <part name="return" type="tns:ArrayOfChannel"/>
+  </message>
+  <message name="GetChannelRankRequest">
+    <part name="sessionId" type="xsd:string"/>
+  </message>
+  <message name="GetChannelRankResponse">
+    <part name="return" type="tns:ArrayOfint"/>
+  </message>
+  <message name="SetUnknownChannelsRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="regionId" type="xsd:string"/>
+    <part name="names" type="tns:ArrayOfstring"/>
+  </message>
+  <message name="GetMovieRankRequest">
+    <part name="sessionId" type="xsd:string"/>
+  </message>
+  <message name="GetMovieRankResponse">
+    <part name="return" type="tns:ArrayOfint"/>
+  </message>
+  <message name="GetProgramsRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="timestamp" type="xsd:dateTime"/>
+  </message>
+  <message name="GetProgramsResponse">
+    <part name="return" type="tns:ArrayOfProgram"/>
+  </message>
+  <message name="GetEpisodesRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="timestamp" type="xsd:dateTime"/>
+  </message>
+  <message name="GetEpisodesResponse">
+    <part name="return" type="tns:ArrayOfEpisode"/>
+  </message>
+  <message name="GetMoviesRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="timestamp" type="xsd:dateTime"/>
+  </message>
+  <message name="GetMoviesResponse">
+    <part name="return" type="tns:ArrayOfMovie"/>
+  </message>
+  <message name="GetCastRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="timestamp" type="xsd:dateTime"/>
+  </message>
+  <message name="GetCastResponse">
+    <part name="return" type="tns:ArrayOfCast"/>
+  </message>
+  <message name="GetMovieTypesRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="timestamp" type="xsd:dateTime"/>
+  </message>
+  <message name="GetMovieTypesResponse">
+    <part name="return" type="tns:ArrayOfMovieType"/>
+  </message>
+  <message name="GetDVBCategoryRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="timestamp" type="xsd:dateTime"/>
+  </message>
+  <message name="GetDVBCategoryResponse">
+    <part name="return" type="tns:ArrayOfDVBCategory"/>
+  </message>
+  <message name="GetRelatedProgramsRequest">
+    <part name="sessionId" type="xsd:string"/>
+  </message>
+  <message name="GetRelatedProgramsResponse">
+    <part name="return" type="tns:ArrayOfRelatedProgram"/>
+  </message>
+  <message name="GetEPGRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="timestamp" type="xsd:dateTime"/>
+  </message>
+  <message name="GetEPGResponse">
+    <part name="return" type="tns:EPG"/>
+  </message>
+  <message name="GetEPGLocationRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="timestamp" type="xsd:dateTime"/>
+    <part name="region" type="xsd:string"/>
+  </message>
+  <message name="GetEPGLocationResponse">
+    <part name="return" type="tns:EPGLocation"/>
+  </message>
+  <message name="GetNowRequest"/>
+  <message name="GetNowResponse">
+    <part name="return" type="xsd:dateTime"/>
+  </message>
+  <message name="SearchMovieRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="str" type="xsd:string"/>
+  </message>
+  <message name="SearchMovieResponse">
+    <part name="return" type="tns:ArrayOfMovie"/>
+  </message>
+  <message name="GetGuideRequest">
+    <part name="sessionId" type="xsd:string"/>
+  </message>
+  <message name="GetGuideResponse">
+    <part name="return" type="tns:Guide"/>
+  </message>
+  <message name="GetGuideProgramRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="channelId" type="xsd:int"/>
+    <part name="startDate" type="xsd:dateTime"/>
+    <part name="stopDate" type="xsd:dateTime"/>
+  </message>
+  <message name="GetGuideProgramResponse">
+    <part name="return" type="tns:ArrayOfGuideProgram"/>
+  </message>
+  <message name="GetGuideProgramRecStatRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="channelId" type="xsd:int"/>
+  </message>
+  <message name="GetGuideProgramRecStatResponse">
+    <part name="return" type="tns:ArrayOfGuideProgramRecStat"/>
+  </message>
+  <message name="GetGuideMovieRecStatRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="channelId" type="xsd:int"/>
+  </message>
+  <message name="GetGuideMovieRecStatResponse">
+    <part name="return" type="tns:ArrayOfGuideMovieRecStat"/>
+  </message>
+  <message name="SendTvStatRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="stat" type="tns:ArrayOfTvStat"/>
+  </message>
+  <message name="GetTvStatByPortIdRequest">
+    <part name="sessionId" type="xsd:string"/>
+    <part name="date" type="xsd:dateTime"/>
+  </message>
+  <message name="GetTvStatByPortIdResponse">
+    <part name="return" type="tns:ArrayOfUserTvStat"/>
+  </message>
+  <service name="HomesysService">
+    <port name="HomesysPort" binding="tns:HomesysBinding">
+      <soap:address location="[ENDPOINT]"/>
+    </port>
+  </service>
+</definitions>

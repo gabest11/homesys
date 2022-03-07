@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+  <specVersion>
+    <major>1</major>
+    <minor>0</minor>
+  </specVersion>
+  <device>
+    <deviceType>urn:schemas-upnp-org:device:MediaServer:1</deviceType>
+    <friendlyName>Homesys Media Server</friendlyName>
+    <manufacturer>Homesys</manufacturer>
+    <manufacturerURL>http://www.hybridbox.tv/</manufacturerURL>
+    <modelURL>http://www.hybridbox.tv/</modelURL>
+    <modelName>Homesys 4.0</modelName>
+    <UDN>uuid:RootDevice</UDN>    
+    <serviceList>
+      <service>
+        <serviceType>urn:schemas-upnp-org:service:ConnectionManager:1</serviceType>
+        <serviceId>urn:upnp-org:serviceId:ConnectionManager</serviceId>
+        <controlURL></controlURL>
+        <eventSubURL></eventSubURL>
+        <SCPDURL>ConnectionManager1.xml</SCPDURL>
+      </service>
+      <service>
+        <serviceType>urn:schemas-upnp-org:service:ContentDirectory:1</serviceType>
+        <serviceId>urn:upnp-org:serviceId:ContentDirectory</serviceId>
+        <controlURL></controlURL>
+        <eventSubURL></eventSubURL>
+        <SCPDURL>ContentDirectory1.xml</SCPDURL>
+      </service>
+    </serviceList>
+    <presentationURL></presentationURL>
+  </device>
+</root>

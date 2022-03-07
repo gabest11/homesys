@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseDevel|Win32">
+      <Configuration>ReleaseDevel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseStatic|Win32">
+      <Configuration>ReleaseStatic</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{799AF117-46C8-4120-8649-25E49AFB22FB}</ProjectGUID>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>directshow</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="..\common.props" />
+    <Import Project="..\debug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="..\common.props" />
+    <Import Project="..\release.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'" Label="PropertySheets">
+    <Import Project="..\common.props" />
+    <Import Project="..\release.props" />
+    <Import Project="..\static.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'" Label="PropertySheets">
+    <Import Project="..\common.props" />
+    <Import Project="..\release.props" />
+    <Import Project="..\devel.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib />
+    <Lib />
+    <Lib>
+      <AdditionalDependencies>$(IntDir)a_yuv2rgb.obj;$(IntDir)a_yuvtable.obj;$(IntDir)convert_a.obj;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib />
+    <Lib />
+    <Lib>
+      <AdditionalDependencies>$(IntDir)a_yuv2rgb.obj;$(IntDir)a_yuvtable.obj;$(IntDir)convert_a.obj;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib />
+    <Lib />
+    <Lib>
+      <AdditionalDependencies>$(IntDir)a_yuv2rgb.obj;$(IntDir)a_yuvtable.obj;$(IntDir)convert_a.obj;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib />
+    <Lib />
+    <Lib>
+      <AdditionalDependencies>$(IntDir)a_yuv2rgb.obj;$(IntDir)a_yuvtable.obj;$(IntDir)convert_a.obj;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="AnalogTuner.h" />
+    <ClInclude Include="Ap4AsyncReaderStream.h" />
+    <ClInclude Include="AsyncReader.h" />
+    <ClInclude Include="AudioSwitcher.h" />
+    <ClInclude Include="AviFile.h" />
+    <ClInclude Include="AviSplitter.h" />
+    <ClInclude Include="BaseMuxer.h" />
+    <ClInclude Include="BaseSource.h" />
+    <ClInclude Include="BaseSplitter.h" />
+    <ClInclude Include="BaseSplitterFile.h" />
+    <ClInclude Include="BaseVideo.h" />
+    <ClInclude Include="BitBlt.h" />
+    <ClInclude Include="BitStream.h" />
+    <ClInclude Include="BufferFilter.h" />
+    <ClInclude Include="CDDAReader.h" />
+    <ClInclude Include="CDXAReader.h" />
+    <ClInclude Include="ColorConverter.h" />
+    <ClInclude Include="CSA.h" />
+    <ClInclude Include="DDK\devioctl.h" />
+    <ClInclude Include="DDK\ntddcdrm.h" />
+    <ClInclude Include="DDK\ntddcdvd.h" />
+    <ClInclude Include="DDK\ntdddisk.h" />
+    <ClInclude Include="DDK\ntddstor.h" />
+    <ClInclude Include="DeCSSInputPin.h" />
+    <ClInclude Include="Deinterlacer.h" />
+    <ClInclude Include="DSM.h" />
+    <ClInclude Include="DSMMultiSource.h" />
+    <ClInclude Include="DSMMuxer.h" />
+    <ClInclude Include="DSMPropertyBag.h" />
+    <ClInclude Include="DSMSink.h" />
+    <ClInclude Include="DSMSplitter.h" />
+    <ClInclude Include="DSMSplitterFile.h" />
+    <ClInclude Include="DTSAC3Source.h" />
+    <ClInclude Include="DVBCTuner.h" />
+    <ClInclude Include="DVBFTuner.h" />
+    <ClInclude Include="DVBSTuner.h" />
+    <ClInclude Include="DVBTTuner.h" />
+    <ClInclude Include="DVBTuner.h" />
+    <ClInclude Include="DXVADecoder.h" />
+    <ClInclude Include="DXVADecoderAllocator.h" />
+    <ClInclude Include="DXVADecoderFilter.h" />
+    <ClInclude Include="DXVADecoderH264.h" />
+    <ClInclude Include="DXVADecoderMpeg2.h" />
+    <ClInclude Include="DXVADecoderOutputPin.h" />
+    <ClInclude Include="DXVADecoderVC1.h" />
+    <ClInclude Include="EVRMixerPresenter.h" />
+    <ClInclude Include="FakeTIF.h" />
+    <ClInclude Include="fft.h" />
+    <ClInclude Include="FGFilter.h" />
+    <ClInclude Include="FGManager.h" />
+    <ClInclude Include="Filters.h" />
+    <ClInclude Include="FireDTV.h" />
+    <ClInclude Include="FLACSplitter.h" />
+    <ClInclude Include="FLVSplitter.h" />
+    <ClInclude Include="FontInstaller.h" />
+    <ClInclude Include="GenericPlayer.h" />
+    <ClInclude Include="GenericTuner.h" />
+    <ClInclude Include="H264Decoder.h" />
+    <ClInclude Include="H264Encoder.h" />
+    <ClInclude Include="H264Nalu.h" />
+    <ClInclude Include="HttpReader.h" />
+    <ClInclude Include="IFilterVersion.h" />
+    <ClInclude Include="IGraphBuilder2.h" />
+    <ClInclude Include="IKeyFrameInfo.h" />
+    <ClInclude Include="ImageGrabber.h" />
+    <ClInclude Include="IMpaDecFilter.h" />
+    <ClInclude Include="IMPEG2Decoder.h" />
+    <ClInclude Include="IVideoPresenter.h" />
+    <ClInclude Include="JPEGEncoder.h" />
+    <ClInclude Include="libavcodec.h" />
+    <ClInclude Include="libmpeg2.h" />
+    <ClInclude Include="M3USource.h" />
+    <ClInclude Include="MatroskaMuxer.h" />
+    <ClInclude Include="MatroskaReader.h" />
+    <ClInclude Include="MatroskaSplitter.h" />
+    <ClInclude Include="MatroskaWriter.h" />
+    <ClInclude Include="MediaTypeEx.h" />
+    <ClInclude Include="Monogram_aac.h" />
+    <ClInclude Include="Monogram_x264.h" />
+    <ClInclude Include="moreuuids.h" />
+    <ClInclude Include="mp4mux\MovieWriter.h" />
+    <ClInclude Include="mp4mux\MuxFilter.h" />
+    <ClInclude Include="mp4mux\NALUnit.h" />
+    <ClInclude Include="mp4mux\ParseBuffer.h" />
+    <ClInclude Include="mp4mux\smartptr.h" />
+    <ClInclude Include="mp4mux\TypeHandler.h" />
+    <ClInclude Include="MP4Splitter.h" />
+    <ClInclude Include="MP4SplitterFile.h" />
+    <ClInclude Include="MPADecFilter.h" />
+    <ClInclude Include="MPASplitter.h" />
+    <ClInclude Include="MPASplitterFile.h" />
+    <ClInclude Include="MPEG2Decoder.h" />
+    <ClInclude Include="MPEG2Encoder.h" />
+    <ClInclude Include="MPEGSplitter.h" />
+    <ClInclude Include="MPEGSplitterFile.h" />
+    <ClInclude Include="NullRenderer.h" />
+    <ClInclude Include="OggFile.h" />
+    <ClInclude Include="OggSplitter.h" />
+    <ClInclude Include="RealMediaSplitter.h" />
+    <ClInclude Include="RTMPSource.h" />
+    <ClInclude Include="Silverlight.h" />
+    <ClInclude Include="SilverlightSource.h" />
+    <ClInclude Include="SmartCard.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StreamSwitcher.h" />
+    <ClInclude Include="Strobe.h" />
+    <ClInclude Include="StrobeSource.h" />
+    <ClInclude Include="SubInputPin.h" />
+    <ClInclude Include="SubPassThruFilter.h" />
+    <ClInclude Include="SubProvider.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="DirectShow.h" />
+    <ClInclude Include="TeletextFilter.h" />
+    <ClInclude Include="TextSubProvider.h" />
+    <ClInclude Include="ThreadSafeQueue.h" />
+    <ClInclude Include="TSDemux.h" />
+    <ClInclude Include="TSSink.h" />
+    <ClInclude Include="TSWriter.h" />
+    <ClInclude Include="Tuners.h" />
+    <ClInclude Include="VMR9AllocatorPresenter.h" />
+    <ClInclude Include="VobSubProvider.h" />
+    <ClInclude Include="VP62.h" />
+    <ClInclude Include="WinTVCI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AnalogTuner.cpp" />
+    <ClCompile Include="Ap4AsyncReaderStream.cpp" />
+    <ClCompile Include="AsyncReader.cpp" />
+    <ClCompile Include="AudioSwitcher.cpp" />
+    <ClCompile Include="AviFile.cpp" />
+    <ClCompile Include="AviSplitter.cpp" />
+    <ClCompile Include="BaseMuxer.cpp" />
+    <ClCompile Include="BaseSource.cpp" />
+    <ClCompile Include="BaseSplitter.cpp" />
+    <ClCompile Include="BaseSplitterFile.cpp" />
+    <ClCompile Include="BaseVideo.cpp" />
+    <ClCompile Include="BitBlt.cpp">
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AssemblyAndSourceCode</AssemblerOutput>
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AssemblyAndSourceCode</AssemblerOutput>
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">AssemblyAndSourceCode</AssemblerOutput>
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'">AssemblyAndSourceCode</AssemblerOutput>
+    </ClCompile>
+    <ClCompile Include="BitStream.cpp" />
+    <ClCompile Include="BufferFilter.cpp" />
+    <ClCompile Include="CDDAReader.cpp" />
+    <ClCompile Include="CDXAReader.cpp" />
+    <ClCompile Include="ColorConverter.cpp" />
+    <ClCompile Include="CSA.cpp" />
+    <ClCompile Include="DeCSSInputPin.cpp" />
+    <ClCompile Include="Deinterlacer.cpp" />
+    <ClCompile Include="DirectShow.cpp" />
+    <ClCompile Include="DSMMultiSource.cpp" />
+    <ClCompile Include="DSMMuxer.cpp" />
+    <ClCompile Include="DSMPropertyBag.cpp" />
+    <ClCompile Include="DSMSink.cpp" />
+    <ClCompile Include="DSMSplitter.cpp" />
+    <ClCompile Include="DSMSplitterFile.cpp" />
+    <ClCompile Include="DTSAC3Source.cpp" />
+    <ClCompile Include="DVBCTuner.cpp" />
+    <ClCompile Include="DVBFTuner.cpp" />
+    <ClCompile Include="DVBSTuner.cpp" />
+    <ClCompile Include="DVBTTuner.cpp" />
+    <ClCompile Include="DVBTuner.cpp" />
+    <ClCompile Include="DXVADecoder.cpp" />
+    <ClCompile Include="DXVADecoderAllocator.cpp" />
+    <ClCompile Include="DXVADecoderFilter.cpp" />
+    <ClCompile Include="DXVADecoderH264.cpp" />
+    <ClCompile Include="DXVADecoderMpeg2.cpp" />
+    <ClCompile Include="DXVADecoderOutputPin.cpp" />
+    <ClCompile Include="DXVADecoderVC1.cpp" />
+    <ClCompile Include="EVRMixerPresenter.cpp" />
+    <ClCompile Include="FakeTIF.cpp" />
+    <ClCompile Include="fft.cpp" />
+    <ClCompile Include="FGFilter.cpp" />
+    <ClCompile Include="FGManager.cpp" />
+    <ClCompile Include="FLACSplitter.cpp" />
+    <ClCompile Include="FLVSplitter.cpp" />
+    <ClCompile Include="FontInstaller.cpp" />
+    <ClCompile Include="GenericPlayer.cpp" />
+    <ClCompile Include="GenericTuner.cpp" />
+    <ClCompile Include="H264Decoder.cpp" />
+    <ClCompile Include="H264Encoder.cpp" />
+    <ClCompile Include="H264Nalu.cpp" />
+    <ClCompile Include="HttpReader.cpp" />
+    <ClCompile Include="idct_sse2.cpp" />
+    <ClCompile Include="ImageGrabber.cpp" />
+    <ClCompile Include="JPEGEncoder.cpp" />
+    <ClCompile Include="libavcodec.cpp" />
+    <ClCompile Include="libmpeg2.cpp" />
+    <ClCompile Include="M3USource.cpp" />
+    <ClCompile Include="MatroskaMuxer.cpp" />
+    <ClCompile Include="MatroskaReader.cpp" />
+    <ClCompile Include="MatroskaSplitter.cpp" />
+    <ClCompile Include="MatroskaWriter.cpp" />
+    <ClCompile Include="mc_sse2.cpp" />
+    <ClCompile Include="MediaTypeEx.cpp" />
+    <ClCompile Include="mp4mux\MovieWriter.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="mp4mux\MuxFilter.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="mp4mux\NALUnit.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="mp4mux\ParseBuffer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="mp4mux\TypeHandler.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MP4Splitter.cpp" />
+    <ClCompile Include="MP4SplitterFile.cpp" />
+    <ClCompile Include="MPADecFilter.cpp" />
+    <ClCompile Include="MPASplitter.cpp" />
+    <ClCompile Include="MPASplitterFile.cpp" />
+    <ClCompile Include="MPEG2Decoder.cpp" />
+    <ClCompile Include="MPEG2Encoder.cpp" />
+    <ClCompile Include="MPEGSplitter.cpp" />
+    <ClCompile Include="MPEGSplitterFile.cpp" />
+    <ClCompile Include="NullRenderer.cpp" />
+    <ClCompile Include="OggFile.cpp" />
+    <ClCompile Include="OggSplitter.cpp" />
+    <ClCompile Include="RealMediaSplitter.cpp" />
+    <ClCompile Include="RTMPSource.cpp" />
+    <ClCompile Include="SilverlightSource.cpp" />
+    <ClCompile Include="SmartCard.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StreamSwitcher.cpp" />
+    <ClCompile Include="StrobeSource.cpp" />
+    <ClCompile Include="strsafe.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SubInputPin.cpp" />
+    <ClCompile Include="SubPassThruFilter.cpp" />
+    <ClCompile Include="SubProvider.cpp" />
+    <ClCompile Include="TeletextFilter.cpp" />
+    <ClCompile Include="TextSubProvider.cpp" />
+    <ClCompile Include="TSDemux.cpp" />
+    <ClCompile Include="TSSink.cpp" />
+    <ClCompile Include="TSWriter.cpp" />
+    <ClCompile Include="VMR9AllocatorPresenter.cpp" />
+    <ClCompile Include="VobSubProvider.cpp" />
+    <ClCompile Include="VP62.cpp" />
+    <ClCompile Include="WinTVCI.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="a_yuv2rgb.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="a_yuvtable.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="convert_a.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <None Include="fft_radix2.inl" />
+    <None Include="fft_radix4.inl" />
+    <None Include="fft_sse.inl" />
+    <None Include="JPEGEncoderTables.inl" />
+    <None Include="Teletext.inc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>

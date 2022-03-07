@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control>
+  
+  <Control 
+    Name = "m_background" 
+    Width = "Width" 
+    Height = "Height" 
+    Anchor = "Fill" 
+    BackgroundStyle = "Fit" 
+    />
+  
+  <Control 
+    Name = "m_foreground" 
+    Width = "Width" 
+    Height = "Height" 
+    Anchor = "Fill" 
+    BackgroundStyle = "Fit" 
+    />
+
+</Control>

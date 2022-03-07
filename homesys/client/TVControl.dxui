@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control
+	BackgroundImage = "s|epg_osd.png"
+	BackgroundMargin = "20, 30, 113, 30"
+  >
+
+  <!--PlayerControl2
+    Name = "m_controls"
+    Left = "20"
+    Top = "10"
+    Width = "280"
+    Height = "Height"
+    Anchor = "Left" 
+    /-->
+
+  <EPGProgram
+    Name = "m_desc"
+    Left = "20" 
+    Right = "Width - 125" 
+    Top = "10"
+    Bottom = "Height - 10"
+    Anchor = "Fill" 
+    />
+
+  <Control
+    Name = "m_container"
+    Left = "Width - 100"
+    Right = "Width - 15"
+    Top = "20"
+    Bottom = "Height - 20"
+    Anchor = "Right"
+    >
+
+    <ButtonNF
+      Name = "m_up"
+      Left = "(m_container.Width - 30) / 2"
+      Top = "0"
+      Width = "30"
+      Height = "30"
+      Anchor = "Center, Center"
+      BackgroundImage = "s|kornyil_fel_alap.png"
+      />
+
+    <ButtonNF
+      Name = "m_logo"
+      Left = "(m_container.Width - 62) / 2"
+      Top = "(m_container.Height - 35) / 2"
+      Width = "62"
+      Height = "35"
+      Anchor = "Center, Center"
+      />
+
+    <ButtonNF
+      Name = "m_down"
+      Left = "(m_container.Width - 30) / 2"
+      Top = "m_container.Height - 30"
+      Width = "30"
+      Height = "30"
+      Anchor = "Center, Center"
+		  BackgroundImage = "s|kornyil_le_alap.png"
+      />
+
+  </Control>
+
+  <ChannelTextureFactory 
+    Name = "m_ctf" 
+    />
+
+</Control>

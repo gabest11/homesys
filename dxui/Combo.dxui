@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control
+  CanFocus = "1"
+  TextAlign = "Center, Middle"
+  >
+
+  <Property Name = "MinListWidth" Type = "int" />
+  
+  <Dialog Name = "m_dialog" Anchor = "Top">
+    
+    <List 
+      Name = "m_list" 
+      Anchor = "Fill" 
+      ItemHeight = "Height"
+			Alpha = "0.9f"
+      />
+    
+  </Dialog>
+
+</Control>

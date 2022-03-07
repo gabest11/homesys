@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Menu 
+  Text = "sl|RECORDINGS">
+
+  <ChannelTextureFactory
+    Name = "m_ctf"
+    />
+
+  <RecordingStateTextureFactory
+    Name = "m_rstf"
+    />
+
+  <ZoomList
+    Name = "m_tab"
+    Rect = "40, 130, Width - 40, 160"
+    Anchor = "Top"
+    Horizontal = "true"
+    ItemHeight = "150"
+    ActiveItemHeight = "200"
+    TextHeight = "25"
+    TextAlign = "Center, Middle"
+    TextBold = "true"
+    TabTop = "false">
+
+    <Control
+      Name = "m_info"
+      Left = "m_tab.Width - 300"
+      Right = "m_tab.Width - 10"
+      Height = "30"
+      Anchor = "Right"
+      TextAlign = "Right, Middle"
+      />
+    
+  </ZoomList>    
+
+  <Control
+    Name = "m_container" 
+    Left = "40"
+    Top = "180"
+    Right = "Width - 40"
+    Bottom = "Height - 80"
+    Anchor = "Fill"
+    >
+
+    <List 
+      Name = "m_list" 
+      Width = "m_container.Width"
+      Height = "330" 
+      Anchor = "Fill"
+      ItemHeight = "m_list.Height / 8"
+      RedInfo = "sl|RECORDING_SORT_ORDER"
+      GreenInfo = "sl|RECORDING_SORT_GROUPPING"
+      />
+
+    <!--Video 
+      Name = "m_video"
+      Left = "m_container.Width - 320" 
+      Right = "m_container.Width"
+      Bottom = "240"
+      Anchor = "Right, Top"
+      /-->
+
+    <EPGProgram 
+      Name = "m_program" 
+      Right = "m_container.Width"
+      Top = "340"
+      Bottom = "m_container.Height"
+      Anchor = "Bottom"
+      />
+
+  </Control>
+
+</Menu>

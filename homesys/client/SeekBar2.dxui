@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<SeekBar
+  BackgroundImage = "s|SeekBarBackground.png"
+  BackgroundMargin = "25, 14, 207, 12"
+  IndicatorImage = "s|SeekBarThumb.png"
+  TextAlign = "Center, Middle"
+  TextColor = "White"
+  FillColor = "Red"
+  >
+</SeekBar>

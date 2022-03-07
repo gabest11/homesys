@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<MenuWizard
+  m_title.Text = "sl|TUNING"
+	m_logo.BackgroundImage = "s|"
+  YellowInfo = "sl|TUNE_MANUAL"
+  >
+
+  <Control Name = "m_signal_present_bad" Left = "80" Top = "100" Width = "30" Height = "30" Anchor = "Left, Top" BackgroundImage = "s|f1.png" Visible = "false" />
+  <Control Name = "m_signal_present_good" Left = "80" Top = "100" Width = "30" Height = "30" Anchor = "Left, Top" BackgroundImage = "s|f2.png" Visible = "false" />
+
+  <Control Name = "m_signal_locked_bad" Left = "110" Top = "100" Width = "30" Height = "30" Anchor = "Left, Top" BackgroundImage = "s|f1.png" Visible = "false" />
+  <Control Name = "m_signal_locked_good" Left = "110" Top = "100" Width = "30" Height = "30" Anchor = "Left, Top" BackgroundImage = "s|f2.png" Visible = "false" />
+
+  <Control Name = "m_signal_sqr" Left = "150" Top = "100" Width = "Width - 80" Height = "30" Anchor = "Left, Top" TextAlign = "Left, Middle" Visible = "false" />
+
+  <Select
+    Name = "m_tuner_select"
+    Left = "80"
+    Right = "Width - 80"
+    Top = "180"
+    Height = "30"
+    Anchor = "Top"
+    TextBold = "true"
+		TextAlign = "Center, Middle"
+    />
+
+  <Control
+    Name = "m_scan_auto"
+    Left = "80"
+    Right = "Width - 80"
+    Top = "215"
+    Bottom = "m_wizard.Top - 10"
+    Anchor = "Fill"
+    >
+
+    <Select
+      Name = "m_package_select"
+      Width = "m_scan_auto.Width"
+      Height = "30"
+      Anchor = "Top"
+      TextBold = "true"
+      TextAlign = "Center, Middle"
+      ListRows = "10"
+      />
+
+    <Edit
+      Name = "m_path_edit"
+      Width = "m_scan_auto.Width"
+      Height = "30"
+      Anchor = "Top"
+      />
+
+    <List
+      Name = "m_preset_list"
+      Width = "m_scan_auto.Width"
+      Top = "40"
+      Bottom = "m_scan_auto.Height"
+      Anchor = "Fill"
+      RedInfo = "sl|TOGGLE_ALL"
+      TabTop = "true"
+      TabBottom = "true"
+		  />
+
+  </Control>
+
+  <Control
+    Name = "m_scan_dvbt"
+    Left = "80"
+    Right = "Width - 80"
+    Top = "220"
+    Bottom = "m_wizard.Top - 10"
+    Anchor = "Fill"
+    >
+
+    <Line Top = "0" Width = "m_scan_dvbt.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    <Line Top = "10" Bottom = "m_scan_dvbt.Height - 10" Left = "m_scan_dvbt.Width / 2" Width = "1" Anchor = "Middle, Top, Middle, Bottom" BackgroundColor = "SeparatorLine" />
+
+    <Control Name = "m_dvbt_left" Top = "10" Bottom = "m_scan_dvbt.Height - 10" Right = "m_scan_dvbt.Width / 2 - 20" Anchor = "Left, Top, Middle, Bottom">
+
+      <Control Top = "0*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|IFEC Mode" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbt_ifec" Left = "200" Right = "m_dvbt_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "1*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|IFEC Rate" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbt_ifec_rate" Left = "200" Right = "m_dvbt_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "2*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|OFEC Mode" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbt_ofec" Left = "200" Right = "m_dvbt_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "3*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|OFEC Rate" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbt_ofec_rate" Left = "200" Right = "m_dvbt_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "4*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Modulation" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbt_modulation" Left = "200" Right = "m_dvbt_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "5*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Frequency (KHz)" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Edit Name = "m_dvbt_frequency" Left = "200" Right = "m_dvbt_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "6*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Symbol Rate" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Edit Name = "m_dvbt_symbol_rate" Left = "200" Right = "m_dvbt_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "7*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Bandwidth" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Edit Name = "m_dvbt_bandwidth" Left = "200" Right = "m_dvbt_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+    </Control>
+
+    <Control Name = "m_dvbt_right" Top = "10" Bottom = "m_scan_dvbt.Height - 10" Left = "m_scan_dvbt.Width / 2 + 20" Right = "m_scan_dvbt.Width" Anchor = "Middle, Top, Right, Bottom">
+
+      <Control Top = "0*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|HAlpha" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbt_halpha" Left = "200" Right = "m_dvbt_right.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "1*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Guard" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbt_guard" Left = "200" Right = "m_dvbt_right.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "2*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Transmission" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbt_transmission" Left = "200" Right = "m_dvbt_right.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "3*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|LPIFEC Mode" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbt_lpifec" Left = "200" Right = "m_dvbt_right.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "4*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|LPIFEC Rate" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbt_lpifec_rate" Left = "200" Right = "m_dvbt_right.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+    </Control>
+
+  </Control>
+
+  <Control
+    Name = "m_scan_dvbc"
+    Left = "80"
+    Right = "Width - 80"
+    Top = "215"
+    Bottom = "m_wizard.Top - 10"
+    Anchor = "Fill"
+    >
+
+    <Line Top = "0" Width = "m_scan_dvbc.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    <Line Top = "10" Bottom = "m_scan_dvbc.Height - 10" Left = "m_scan_dvbc.Width / 2" Width = "1" Anchor = "Middle, Top, Middle, Bottom" BackgroundColor = "SeparatorLine" />
+
+    <Control Name = "m_dvbc_left" Top = "10" Bottom = "m_scan_dvbc.Height - 10" Right = "m_scan_dvbc.Width / 2 - 20" Anchor = "Left, Top, Middle, Bottom">
+
+      <Control Top = "0*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|IFEC Mode" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbc_ifec" Left = "200" Right = "m_dvbc_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "1*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|IFEC Rate" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbc_ifec_rate" Left = "200" Right = "m_dvbc_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "2*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|OFEC Mode" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbc_ofec" Left = "200" Right = "m_dvbc_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "3*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|OFEC Rate" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbc_ofec_rate" Left = "200" Right = "m_dvbc_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "4*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Modulation" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbc_modulation" Left = "200" Right = "m_dvbc_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "5*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Frequency (KHz)" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Edit Name = "m_dvbc_frequency" Left = "200" Right = "m_dvbc_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "6*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Symbol Rate" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Edit Name = "m_dvbc_symbol_rate" Left = "200" Right = "m_dvbc_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+    </Control>
+
+  </Control>
+
+  <Control
+    Name = "m_scan_dvbs"
+    Left = "80"
+    Right = "Width - 80"
+    Top = "215"
+    Bottom = "m_wizard.Top - 10"
+    Anchor = "Fill"
+    >
+
+    <Line Top = "0" Width = "m_scan_dvbs.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    <Line Top = "10" Bottom = "m_scan_dvbs.Height - 10" Left = "m_scan_dvbs.Width / 2" Width = "1" Anchor = "Middle, Top, Middle, Bottom" BackgroundColor = "SeparatorLine" />
+
+    <Control Name = "m_dvbs_left" Top = "10" Bottom = "m_scan_dvbs.Height - 10" Right = "m_scan_dvbs.Width / 2 - 20" Anchor = "Left, Top, Middle, Bottom">
+
+      <Control Top = "0*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|IFEC Mode" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbs_ifec" Left = "200" Right = "m_dvbs_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "1*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|IFEC Rate" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbs_ifec_rate" Left = "200" Right = "m_dvbs_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "2*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|OFEC Mode" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbs_ofec" Left = "200" Right = "m_dvbs_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "3*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|OFEC Rate" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbs_ofec_rate" Left = "200" Right = "m_dvbs_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "4*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Modulation" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbs_modulation" Left = "200" Right = "m_dvbs_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "5*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Frequency (KHz)" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Edit Name = "m_dvbs_frequency" Left = "200" Right = "m_dvbs_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "6*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Symbol Rate" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Edit Name = "m_dvbs_symbol_rate" Left = "200" Right = "m_dvbs_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+    </Control>
+
+    <Control Name = "m_dvbs_right" Top = "10" Bottom = "m_scan_dvbs.Height - 10" Left = "m_scan_dvbs.Width / 2 + 20" Right = "m_scan_dvbs.Width" Anchor = "Middle, Top, Right, Bottom">
+
+      <Control Top = "0*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Polarisation" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbs_polarisation" Left = "200" Right = "m_dvbs_right.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "1*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|LNB Source" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_dvbs_lnb_source" Left = "200" Right = "m_dvbs_right.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+    </Control>
+
+  </Control>
+
+  <Control
+    Name = "m_scan_analog"
+    Left = "80"
+    Right = "Width - 80"
+    Top = "215"
+    Bottom = "m_wizard.Top - 10"
+    Anchor = "Fill"
+    >
+
+    <Line Top = "0" Width = "m_scan_analog.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    <Line Top = "10" Bottom = "m_scan_analog.Height - 10" Left = "m_scan_analog.Width / 2" Width = "1" Anchor = "Middle, Top, Middle, Bottom" BackgroundColor = "SeparatorLine" />
+
+    <Control Name = "m_analog_left" Top = "10" Bottom = "m_scan_analog.Height - 10" Right = "m_scan_analog.Width / 2 - 20" Anchor = "Left, Top, Middle, Bottom">
+
+      <Control Top = "0*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Standard" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_analog_standard" Left = "200" Right = "m_analog_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "1*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Cable" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_analog_cable" Left = "200" Right = "m_analog_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "2*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Connector" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Select Name = "m_analog_connector" Left = "200" Right = "m_analog_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+      <Control Top = "3*45" Anchor = "Fill">
+        <Control Width = "190" Height = "30" Text = "s|Frequency (KHz)" TextAlign = "Left, Middle" TextHeight = "28" />
+        <Edit Name = "m_analog_frequency" Left = "200" Right = "m_analog_left.Width - 10" Height = "30" Anchor = "Top" />
+      </Control>
+
+    </Control>
+
+  </Control>
+
+  <ImageButton
+    Name = "m_scan"
+    Parent = "&amp;m_wizard"
+    Left = "0"
+    Width = "150"
+    Top = "10"
+    Height = "40"
+    Anchor = "Left, Top"
+    Text = "sl|SEARCH"
+		/>
+
+  <Control
+    Name = "m_signal_bad"
+    Parent = "&amp;m_wizard"
+    Left = "160"
+    Width = "30"
+    Top = "15"
+    Height = "30"
+    Anchor = "Left, Top"
+    BackgroundImage = "s|f1.png"
+    Visible = "false"
+		/>
+
+  <Control
+    Name = "m_signal_good"
+    Parent = "&amp;m_wizard"
+    Left = "160"
+    Width = "30"
+    Top = "15"
+    Height = "30"
+    Anchor = "Left, Top"
+    BackgroundImage = "s|f2.png"
+    Visible = "false"
+		/>
+
+  <Control
+    Name = "m_signal_text"
+    Parent = "&amp;m_wizard"
+    Left = "200"
+    Right = "m_prev.Left - 10"
+    Top = "10"
+    Height = "40"
+    Anchor = "Left, Top, Right, Top"
+    TextAlign = "Left, Middle"
+    TextHeight = "30"
+    Visible = "false"
+		/>
+
+  <CheckButton
+    Name = "m_append"
+    Parent = "&amp;m_wizard"
+    Left = "170"
+    Width = "300"
+    Top = "18"
+    Height = "24"
+    Anchor = "Left, Top"
+    Text = "sl|SCAN_APPEND_PRESETS"
+    TextAlign = "Left, Middle"
+    TextHeight = "22"
+    />
+
+</MenuWizard>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<MenuOSD
+  Text = "sl|DVD" 
+  >
+
+  <Control
+    Name = "m_info_panel"
+    BackgroundImage = "s|ListBackground.png"
+    BackgroundMargin = "10, 10, 10, 10"
+    Left = "20"
+    Right = "Width - 20"
+    Top = "20"
+    Height = "50 + 25 * 3 + 20"
+    Anchor = "Top"
+    Alpha = "0.5">
+
+    <Control
+      Name = "m_info_picture"
+      Left = "10"
+      Top = "10"
+      Right = "m_info_panel.Height * 4 / 3 - 10"
+      Bottom = "m_info_panel.Height - 10"
+      Anchor = "Left"
+      />
+
+    <Control 
+      Name = "m_info_text" 
+      Left = "m_info_picture.Right + 10" 
+      Right = "m_info_panel.Width - 10"
+      Top = "10"
+      Bottom = "m_info_panel.Bottom" 
+      Anchor = "Fill">
+
+      <Control 
+        Name = "m_info_title" 
+        Right = "m_info_text.Width" 
+        Height = "50" 
+        TextFace = "Bold" 
+        TextBold = "true" 
+        TextColor = "Text2" 
+        Anchor = "Percent, Top, Percent, Top" 
+        ScrollNoFocus = "true" />
+
+      <Control 
+        Name="m_info_desc_container" 
+        Left = "m_info_text.Width / 2" 
+        Right = "m_info_text.Width" 
+        Top = "m_info_title.Height + 15" 
+        Height = "2 * 30" 
+        Anchor = "Percent, Top, Percent, Top">
+        
+        <Control 
+          Name = "m_info_desc" 
+          Width = "m_info_desc_container.Width" 
+          Top = "0 * 30" 
+          Height = "30" 
+          TextBold = "true" 
+          TextColor = "Text1" 
+          TextAlign = "Right, Middle" 
+          Anchor = "Top" />
+        
+        <Control 
+          Name = "m_info_year" 
+          Width = "m_info_desc_container.Width" 
+          Top = "1 * 30" 
+          Height = "30" 
+          TextBold = "true" 
+          TextColor = "Text1" 
+          TextAlign = "Right, Middle" 
+          Anchor = "Top" />
+        
+        <Control 
+          Name = "m_info_desc_button" 
+          Left = "m_info_desc_container.Width - 30" 
+          Right = "m_info_desc_container.Width" 
+          Top = "0 * 30" 
+          Height = "30" 
+          Anchor = "Right" 
+          BackgroundImage = "s|F1.png" 
+          TextAlign = "Center, Middle"
+          TextBold = "true"
+          TextHeight = "20"
+          TextColor = "Black"
+          Text = "sl|F1"
+          />
+     
+      </Control>
+
+      <Control Name = "m_info_track_container" Right = "m_info_text.Width / 2" Top = "m_info_title.Height" Height = "3 * 25" Anchor = "Percent, Top">
+        
+        <Control Name = "m_info_video_container" Top = "0 * 25" Width = "m_info_track_container.Width" Height = "25" Anchor = "Top">
+          <Control Name = "m_info_video_icon" Width = "20" Height = "25" BackgroundImage = "s|fVideo.png" BackgroundStyle = "Fit" />
+          <Control Name = "m_info_video" Left = "25" Right = "m_info_video_container.Width" Height = "25" TextBold = "true" TextColor = "Text1" Anchor = "Fill" />
+        </Control>
+
+        <Control Name = "m_info_audio_container" Top = "1 * 25" Width = "m_info_track_container.Width" Height = "25" Anchor = "Top">
+          <Control Name = "m_info_audio_icon" Width = "20" Height = "25" BackgroundImage = "s|Audio.png" BackgroundStyle = "Fit" />
+          <Control Name = "m_info_audio" Left = "25" Right = "m_info_audio_container.Width" Height = "25" TextBold = "true" TextColor = "Text1" Anchor = "Fill" />
+        </Control>
+
+        <Control Name = "m_info_subtitle_container" Top = "2 * 25" Width = "m_info_track_container.Width" Height = "25" Anchor = "Top">
+          <Control Name = "m_info_subtitle_icon" Width = "20" Height = "25" BackgroundImage = "s|Subtitle.png" BackgroundStyle = "Fit" />
+          <Control Name = "m_info_subtitle" Left = "25" Right = "m_info_subtitle_container.Width" Height = "25" TextBold = "true" TextColor = "Text1" Anchor = "Fill" />
+        </Control>
+
+      </Control>
+
+    </Control>
+    
+  </Control>
+  
+  <PlayerControl1
+    Name = "m_controls" 
+    Left = "Width / 2 - 129"
+    Top = "Height - 42 - 40" 
+    Width = "258"
+    Height = "42"
+    Anchor = "Center, Bottom"
+    />
+
+  <SeekBar2
+    Name = "m_seekbar"
+    Left = "20"
+    Right = "Width - 20"
+    Top = "Height - 40"
+    Height = "30"
+    Anchor = "Bottom"
+    />
+
+  <Control
+    Name = "m_info_desc_more_container"
+    BackgroundImage = "s|ListBackground.png"
+    BackgroundMargin = "10, 10, 10, 10"
+    Left = "20"
+    Right = "Width - 20"
+    Top = "m_info_panel.Bottom + 20"
+    Bottom = "m_controls.Top - 20"
+    Anchor = "Fill"
+    Alpha = "0.5">
+
+    <ScrollText
+      Name = "m_info_desc_more"
+      Top = "10"
+      Bottom = "m_info_desc_more_container.Height - 10"
+      Left = "10"
+      Right = "m_info_desc_more_container.Width - 10"
+      Anchor = "Fill"
+      TextHeight = "35"
+      />
+
+  </Control>
+
+  <Control
+    Name = "m_ad_panel"
+    BackgroundImage = "s|ListBackground.png"
+    BackgroundMargin = "10, 10, 10, 10"
+    Left = "20"
+    Right = "Width - 20"
+    Top = "Height - 100 - 50"
+    Height = "100"
+    Anchor = "Bottom"
+    Alpha = "0.5"
+    Visible = "false"
+    TextHeight = "35"
+    TextMargin = "20, 10, 20, 10"
+    TextAlign = "Left, Top"
+    TextBold = "true"
+    Text = "s|Most tekerd el a Pepsid kupakját és írd be a számot, amit találsz rajta!">
+
+    <Edit
+      Name = "m_ad_input"
+      Left = "20"
+      Width = "200"
+      Top = "m_ad_panel.Height - 40"
+      Height = "30"
+      Anchor = "Left, Bottom"
+      />
+
+    <ImageButton
+      Left = "230"
+      Width = "100"
+      Top = "m_ad_panel.Height - 43"
+      Height = "35"
+      Anchor = "Left, Bottom"
+      Text ="sl|SEND"
+      />
+
+  </Control>
+  
+</MenuOSD>

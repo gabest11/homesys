@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<MenuWizard
+  m_title.Text = "sl|CHANNELS"
+  m_logo.BackgroundImage = "s|tv.png">
+
+  <Select
+    Name = "m_tunerselect"
+    Left = "60"
+    Right = "Width - 60"
+    Top = "160"
+    Height = "30"
+    Anchor = "Top"
+    TextAlign = "Center, Middle"
+    ListRows = "0"
+    />
+
+  <List
+    Name = "m_src_list"
+    Left = "60"
+    Top = "210"
+    Right = "Width / 2 - 10"
+    Bottom = "Height - 170"
+    ItemHeight = "30"
+    Anchor = "Left, Top, Middle, Bottom"
+	RedInfo = "sl|CHANNEL_SORT_BY_CURRENT"
+	YellowInfo = "sl|CHANNEL_SORT_BY_NAME"
+	BlueInfo = "sl|CHANNEL_SORT_BY_RANK"
+    />
+
+  <List
+    Name = "m_dst_list"
+    Left = "Width / 2 + 10"
+    Top = "210"
+    Right = "Width - 60"
+    Bottom = "Height - 170"
+    ItemHeight = "30"
+    Anchor = "Middle, Top, Right, Bottom"
+    RedInfo = "sl|CHANNEL_SORT_UP"
+    GreenInfo = "sl|CHANNEL_SORT_DOWN"
+    />
+
+</MenuWizard>

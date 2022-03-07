@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PropertyPageSchema
+      Include="$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml" />
+    <AvailableItemName
+      Include="DXUI">
+      <Targets>_DXUI</Targets>
+    </AvailableItemName>
+  </ItemGroup>
+  <UsingTask
+    TaskName="DXUI"
+    TaskFactory="XamlTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.v4.0">
+    <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
+  </UsingTask>
+  <Target
+    Name="_DXUI"
+    BeforeTargets="$(DXUIBeforeTargets)"
+    AfterTargets="$(DXUIAfterTargets)"
+    Condition="'@(DXUI)' != ''"
+    DependsOnTargets="_SelectedFiles;ComputeDXUIOutput"
+    Outputs="@(DXUI-&gt;'%(Outputs)')"
+    Inputs="@(DXUI);%(DXUI.AdditionalDependencies);$(MSBuildProjectFile)">
+    <ItemGroup
+      Condition="'@(SelectedFiles)' != ''">
+      <DXUI
+        Remove="@(DXUI)"
+        Condition="'%(Identity)' != '@(SelectedFiles)'" />
+    </ItemGroup>
+    <ItemGroup>
+      <DXUI_tlog
+        Include="%(DXUI.Outputs)"
+        Condition="'%(DXUI.Outputs)' != '' and '%(DXUI.ExcludedFromBuild)' != 'true'">
+        <Source>@(DXUI, '|')</Source>
+      </DXUI_tlog>
+    </ItemGroup>
+    <Message
+      Importance="High"
+      Text="%(DXUI.ExecutionDescription)" />
+    <WriteLinesToFile
+      File="$(IntDir)$(ProjectName).write.1.tlog"
+      Lines="^%(DXUI_tlog.Source);@(DXUI_tlog-&gt;'%(Fullpath)')" />
+    <DXUI
+      Condition="'%(DXUI.ExcludedFromBuild)' != 'true'"
+      CommandLineTemplate="%(DXUI.CommandLineTemplate)"
+      AdditionalOptions="%(DXUI.AdditionalOptions)"
+      Inputs="%(DXUI.Identity)" />
+  </Target>
+  <PropertyGroup>
+    <ComputeLinkInputsTargets>
+            $(ComputeLinkInputsTargets);
+            ComputeDXUIOutput;
+          </ComputeLinkInputsTargets>
+    <ComputeLibInputsTargets>
+            $(ComputeLibInputsTargets);
+            ComputeDXUIOutput;
+          </ComputeLibInputsTargets>
+  </PropertyGroup>
+  <Target
+    Name="ComputeDXUIOutput"
+    Condition="'@(DXUI)' != ''">
+    <ItemGroup>
+      <DXUIDirsToMake
+        Condition="'@(DXUI)' != ''"
+        Include="%(DXUI.Outputs)" />
+      <Link
+        Include="%(DXUIDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+      <Lib
+        Include="%(DXUIDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+      <ImpLib
+        Include="%(DXUIDirsToMake.Identity)"
+        Condition="'%(Extension)'=='.obj' or '%(Extension)'=='.res' or '%(Extension)'=='.rsc' or '%(Extension)'=='.lib'" />
+    </ItemGroup>
+    <MakeDir
+      Directories="@(DXUIDirsToMake-&gt;'%(RootDir)%(Directory)')" />
+  </Target>
+</Project>

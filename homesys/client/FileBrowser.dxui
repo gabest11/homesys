@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Browser>
+  
+  <List
+    Name = "m_list"
+    Width = "Width"
+    Height = "Height"
+    Anchor = "Fill"
+    TextAlign = "Left, Middle"
+    TextColor = "Text1"
+    TextWrap = "true"
+    TextEscaped = "true"
+    ItemHeight = "Height / 6"
+  />
+  
+</Browser>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup
+    Condition="'$(DXUIBeforeTargets)' == '' and '$(DXUIAfterTargets)' == '' and '$(ConfigurationType)' != 'Makefile'">
+    <DXUIBeforeTargets>Midl</DXUIBeforeTargets>
+    <DXUIAfterTargets>CustomBuild</DXUIAfterTargets>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <DXUI>
+      <CommandLineTemplate>php "$(SolutionDir)dxui\dxui.php" [AllOptions] [AdditionalOptions] [Inputs]</CommandLineTemplate>
+      <Outputs>%(FileName).dxui.h</Outputs>
+      <ExecutionDescription>Compiling DXUI</ExecutionDescription>
+    </DXUI>
+  </ItemDefinitionGroup>
+</Project>

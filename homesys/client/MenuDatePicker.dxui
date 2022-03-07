@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Menu 
+  m_title.Text = "s|Időpont választás">
+
+  <Calendar 
+    Name = "m_calendar" 
+    Left = "60" Top = "160" Right = "Width - 320" Bottom = "Bottom - 80"
+    Anchor = "Fill"
+    />
+
+  <CalendarHour
+    Name = "m_hour"
+    Left = "Width - 300" Top = "160" Right = "Width - 60" Bottom = "Bottom - 80"
+    Anchor = "Right"
+    ItemHeight = "48"
+    TextHeight = "35"
+    AutoSelect = "true"
+    m_slider.Visible = "false"
+    />
+
+</Menu>

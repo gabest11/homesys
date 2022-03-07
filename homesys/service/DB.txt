@@ -1,0 +1,277 @@
+﻿Machine
+id uniqueidentifier PRIMARY KEY
+web_id uniqueidentifier
+name nvarchar (256) NOT NULL
+*published bit DEFAULT 0 NOT NULL
+recording_path nvarchar (1024)
+recording_format nvarchar (8)
+download_path nvarchar (1024)
+timeshift_path nvarchar (1024)
+timeshift_dur int DEFAULT 100 NOT NULL
+username nvarchar (64)
+password nvarchar (64)
+lang nvarchar (3) DEFAULT 'eng' NOT NULL
+
+ServiceMessage
+id int IDENTITY PRIMARY KEY
+message nvarchar (128) NOT NULL
+*post_date datetime NOT NULL
+*valid_until datetime
+repeat int DEFAULT 0 NOT NULL
+delay int DEFAULT 0 NOT NULL
+*deleted bit DEFAULT 0 NOT NULL
+*type int DEFAULT 0 NOT NULL
+
+Parental
+id int IDENTITY PRIMARY KEY
+password nvarchar (64) NOT NULL
+enabled bit DEFAULT 0 NOT NULL
+inactivity int DEFAULT 0 NOT NULL
+*rating int DEFAULT 0 NOT NULL
+
+WebUpdate
+id int IDENTITY PRIMARY KEY
+*type int NOT NULL
+at datetime NOT NULL
+msg nvarchar (256)
+percent_done int DEFAULT 0 NOT NULL
+
+Tuner
+id uniqueidentifier PRIMARY KEY
+type int DEFAULT 0 NOT NULL
+web_id uniqueidentifier
+display_name nvarchar (256) NOT NULL
+friendly_name nvarchar (256) NOT NULL
+*provider_id int
+*preset_id int DEFAULT 0 NOT NULL
+
+Connector
+id int IDENTITY PRIMARY KEY
+*tuner_id uniqueidentifier NOT NULL
+*num int NOT NULL
+type int NOT NULL
+name nvarchar (128) NOT NULL
+
+Preset
+id int IDENTITY PRIMARY KEY
+*tuner_id uniqueidentifier NOT NULL
+*channel_id int DEFAULT 0 NOT NULL
+scrambled bit DEFAULT 0 NOT NULL
+*enabled int DEFAULT 0 NOT NULL
+*rating int DEFAULT 0 NOT NULL
+provider nvarchar (32)
+name nvarchar (64)
+// tune request
+freq int DEFAULT 0 NOT NULL
+// analog
+standard int DEFAULT -1 NOT NULL
+*connector_id int NOT NULL
+// dvb-*
+sid int DEFAULT 0 NOT NULL
+ifec int DEFAULT -1 NOT NULL
+ifecrate int DEFAULT -1 NOT NULL
+ofec int DEFAULT -1 NOT NULL
+ofecrate int DEFAULT -1 NOT NULL
+modulation int DEFAULT -1 NOT NULL
+symbol_rate int DEFAULT -1 NOT NULL
+// dvb-s
+polarisation int DEFAULT -1 NOT NULL
+west bit DEFAULT 0 NOT NULL
+orbital_position int DEFAULT 0 NOT NULL
+azimuth int DEFAULT 0 NOT NULL
+elevation int DEFAULT 0 NOT NULL
+lnb_source int DEFAULT -1 NOT NULL
+low_oscillator int DEFAULT -1 NOT NULL
+high_oscillator int DEFAULT -1 NOT NULL
+lnb_switch int DEFAULT -1 NOT NULL
+spectral_inversion int DEFAULT -1 NOT NULL
+// dvb-t
+bandwidth int DEFAULT -1 NOT NULL
+lpifec int DEFAULT -1 NOT NULL
+lpifecrate int DEFAULT -1 NOT NULL
+halpha int DEFAULT -1 NOT NULL
+guard int DEFAULT -1 NOT NULL
+transmission_mode int DEFAULT -1 NOT NULL
+other_freq_in_use bit DEFAULT 0 NOT NULL
+// dvb-f
+path nvarchar (512)
+
+Recording
+id uniqueidentifier PRIMARY KEY
+*web_id int DEFAULT 0 NOT NULL
+name nvarchar (256) DEFAULT '' NOT NULL
+*start datetime NOT NULL
+*stop datetime
+start_delay int DEFAULT -60 NOT NULL
+stop_delay int DEFAULT 300 NOT NULL
+state int NOT NULL
+*preset_id int
+*program_id int
+path nvarchar (1024)
+rating int DEFAULT 0 NOT NULL
+*channel_id int DEFAULT 0 NOT NULL
+
+MovieRecording
+id uniqueidentifier PRIMARY KEY
+*movie_id int NOT NULL
+*channel_id int NOT NULL
+
+WishlistRecording
+id uniqueidentifier PRIMARY KEY
+title nvarchar (64)
+description nvarchar (64)
+actor nvarchar (64)
+director nvarchar (64)
+channel_id int
+
+Channel
+id int PRIMARY KEY
+name nvarchar (64) NOT NULL
+url nvarchar (256)
+*radio bit NOT NULL
+logo image
+*rank int DEFAULT 0 NOT NULL
+
+ChannelAlias
+id int IDENTITY PRIMARY KEY
+*channel_id int NOT NULL
+name nvarchar (64) NOT NULL
+
+Program
+id int PRIMARY KEY
+*channel_id int NOT NULL
+*episode_id int NOT NULL
+*movie_id int DEFAULT 0 NOT NULL
+*start datetime NOT NULL
+*stop datetime NOT NULL
+*is_repeat bit NOT NULL
+*is_live bit NOT NULL
+*is_recommended bit NOT NULL
+*is_deleted bit NOT NULL
+
+ProgramActive
+id int PRIMARY KEY
+*channel_id int NOT NULL
+*episode_id int NOT NULL
+*movie_id int DEFAULT 0 NOT NULL
+*start datetime NOT NULL
+*stop datetime NOT NULL
+*is_repeat bit NOT NULL
+*is_live bit NOT NULL
+*is_recommended bit NOT NULL
+*is_deleted bit NOT NULL
+
+ProgramRelated
+id int IDENTITY PRIMARY KEY
+*program_id int NOT NULL
+*other_program_id int NOT NULL
+*type int NOT NULL
+
+Episode
+id int PRIMARY KEY
+*movie_id int NOT NULL
+*title nvarchar (64) NOT NULL
+description nvarchar (4000) NOT NULL
+*episode_number int NOT NULL
+*temp bit NOT NULL
+
+EpisodeActive
+id int PRIMARY KEY
+*movie_id int NOT NULL
+*title nvarchar (64) NOT NULL
+description nvarchar (4000) NOT NULL
+*episode_number int NOT NULL
+*temp bit NOT NULL
+
+Movie
+id int PRIMARY KEY
+*movietype_id int NOT NULL
+*dvbcategory_id int NOT NULL
+*title nvarchar (64) NOT NULL
+description nvarchar (4000) NOT NULL
+*rating int NOT NULL
+*year int NOT NULL
+*episode_count int NOT NULL
+*temp bit NOT NULL
+*has_picture bit DEFAULT 0 NOT NULL
+
+MovieActive
+id int PRIMARY KEY
+*movietype_id int NOT NULL
+*dvbcategory_id int NOT NULL
+*title nvarchar (64) NOT NULL
+description nvarchar (4000) NOT NULL
+*rating int NOT NULL
+*year int NOT NULL
+*episode_count int NOT NULL
+*temp bit NOT NULL
+*has_picture bit DEFAULT 0 NOT NULL
+
+MovieFavorite
+id int PRIMARY KEY
+
+EpisodeCast
+id int IDENTITY PRIMARY KEY
+*episode_id int NOT NULL
+*cast_id int NOT NULL
+*role_id int NOT NULL
+*name nvarchar (64)
+
+Cast
+id int PRIMARY KEY
+*name nvarchar (64) NOT NULL
+
+MovieType
+id int PRIMARY KEY
+*name_short nvarchar (32) NOT NULL
+*name_long nvarchar (64) NOT NULL
+
+DVBCategory
+id int PRIMARY KEY
+*name nvarchar (64) NOT NULL
+
+TvStat
+id int IDENTITY PRIMARY KEY
+*channel_id int NOT NULL
+*program_id int NOT NULL
+start datetime NOT NULL
+stop datetime NOT NULL
+*active bit DEFAULT 1 NOT NULL
+*uploaded bit DEFAULT 0 NOT NULL
+
+TuneRequestPackage
+id int IDENTITY PRIMARY KEY
+type int NOT NULL
+provider nvarchar (32) NOT NULL
+name nvarchar (128) NOT NULL
+
+TuneRequest
+package_id int NOT NULL
+channel_id int NOT NULL
+// tune request
+freq int NOT NULL
+// analog
+standard int NOT NULL
+// dvb-*
+ifec int NOT NULL
+ifecrate int NOT NULL
+ofec int NOT NULL
+ofecrate int NOT NULL
+modulation int NOT NULL
+symbol_rate int NOT NULL
+// dvb-s
+polarisation int NOT NULL
+lnb_source int NOT NULL
+spectral_inversion int NOT NULL
+// dvb-t
+bandwidth int NOT NULL
+lpifec int NOT NULL
+lpifecrate int NOT NULL
+halpha int NOT NULL
+guard int NOT NULL
+transmission_mode int NOT NULL
+other_freq_in_use bit NOT NULL
+// dvb-f
+path nvarchar (512)
+
+The END

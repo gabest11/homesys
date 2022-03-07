@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Menu
+  m_title.Text = "sl|CD_DVD"
+  m_logo.BackgroundImage = "s|dvd.png">
+
+  <List
+    Name = "m_list"
+    Left = "60"
+    Top = "180"
+    Right = "Width - 60 - 400"
+    Bottom = "Height - 100"
+    Anchor = "Fill"
+    ItemHeight = "40"
+    TextMarginLeft = "5"
+    />
+
+  <Control
+    Name = "m_container"
+    Left = "Width - 60 - 381"
+    Top = "180"
+    Right = "Width - 60"
+    Bottom = "Height - 100"
+    Anchor = "Right"
+    >
+
+    <SeekBar2
+      Name = "m_seekbar"
+      Right = "m_container.Width"
+      Top = "0"
+      Bottom = "30"
+      Anchor = "Right, Top"
+      />
+
+    <PlayerControl1
+      Name = "m_controls"
+      Right = "m_container.Width"
+      Top = "55"
+      Bottom = "125"
+      Anchor = "Right, Top"
+      />
+
+    <Select
+      Name = "m_order"
+      Right = "m_container.Width"
+      Top = "140"
+      Bottom = "170"
+      Anchor = "Right, Top"
+      />
+
+    <Control
+      Name = "m_desc"
+      Right = "m_container.Width"
+      Top = "190"
+      Bottom = "m_container.Height"
+      Anchor = "Right"
+      TextHeight = "30" 
+      TextWrap = "true"
+      TextAlign = "Left, Top"
+      />
+    
+  </Control>
+
+</Menu>

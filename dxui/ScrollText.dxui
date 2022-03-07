@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control
+	TextAlign = "Left, Top"
+	TextWrap = "true"
+  >
+  
+  <Slider 
+    Name = "m_slider" 
+    Left = "Width - 35"
+    Right = "Width"
+    Bottom = "Height"
+    Anchor = "Right"
+    Vertical = "true"
+    Step = "0.1f"
+    />
+  
+</Control>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Menu
+  Default = "&amp;m_next">
+
+  <Control
+    Name = "m_wizard"
+    Left = "Width / 2 - 390"
+    Right = "Width / 2 + 390"
+    Top = "Height - 150"
+    Bottom = "Height - 100"
+    Anchor = "Center, Bottom"
+    >
+
+    <Line
+      Width = "m_wizard.Width"
+      Height = "1"
+      Anchor = "Center, Bottom"
+      BackgroundColor = "SeparatorLine"
+      />
+
+    <ImageButton
+      Name = "m_prev"
+      Left = "m_wizard.Width - 300 - 10"
+      Top = "10"
+      Width = "150"
+      Height = "40"
+      Text = "sl|CANCEL"
+      Anchor = "Right, Top"
+      />
+
+    <ImageButton
+      Name = "m_next"
+      Left = "m_wizard.Width - 150"
+      Top = "10"
+      Width = "150"
+      Height = "40"
+      Text = "sl|NEXT"
+      Anchor = "Right, Top"
+      />
+
+  </Control>
+
+</Menu>

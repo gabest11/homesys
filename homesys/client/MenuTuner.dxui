@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<MenuWizard
+  m_title.Text = "sl|HTPC_REG"
+	m_logo.BackgroundImage = "s|"
+  >
+
+  <Control Left = "m_wizard.Left" Top = "180" Right = "m_wizard.Right" Bottom = "m_wizard.Top" Anchor = "Center, Top">
+  
+    <Control Name = "m_name_label" Width = "200" Height = "30" Text = "sl|HTPC_NAME" TextBold = "true" />
+    <Edit Name = "m_name" Top = "40" Width = "200" Height = "30" />
+    <Control Name = "m_tuners_label" Top = "100" Width = "400" Height = "30" Text = "sl|HTPC_TUNERS" TextBold = "true" />
+  
+  </Control>
+  
+</MenuWizard>

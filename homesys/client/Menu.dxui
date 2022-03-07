@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Window>
+
+  <HotLinkStrip Name = "m_hotlink" Width = "Width" Height = "92" Anchor = "Top" BackgroundImage = "s|MenuBackgroundTop.png"/>
+                
+  <Line Top = "92" Bottom = "92" Left = "0" Right = "Width / 2" Color1 = "None" Color2 = "White" Anchor = "Left, Top, Percent, Top" />
+  <Line Top = "92" Bottom = "92" Left = "Width / 2" Right = "Width" Color1 = "White" Color2 = "None" Anchor = "Percent, Top, Right, Top" />
+
+  <Control
+    Name = "m_homesys_logo"
+    BackgroundImage = "s|HomesysLogo.png"
+    BackgroundStyle = "Fit"
+    Left = "0"
+    Top = "0"
+    Width = "Width"
+    Height = "92"
+    Anchor = "Top"
+    />
+
+  <Control
+    Name = "m_logo"
+    Left = "40"
+    Top = "0"
+    Right = "340"
+    Bottom = "180"
+    BackgroundStyle = "Fit"
+    Anchor = "Left, Top" 
+    />
+
+  <Control
+    Name = "m_title"
+    Left = "250"
+    Top = "105"
+    Right = "Width - 100"
+    Bottom = "150"
+    Anchor = "Top"
+    TextAlign = "Right, Middle"
+    TextColor = "Text1"
+    TextHeight = "40"
+    TextBold = "true"
+    />
+
+  <StatusBar 
+    Name = "m_status"
+    Left = "Width / 2 - 450" 
+    Right = "Width / 2 + 450"
+    Top = "Height - 70"
+    Bottom = "Height - 22"
+    Anchor = "Center, Bottom"
+    />
+
+  <Banner
+    Name = "m_advertisement"
+    Left = "Width / 2 - 200"
+    Right = "Width / 2 + 200"
+    Top = "Height - 140"
+    Bottom = "Height - 70"
+    Anchor = "Middle, Bottom, Middle, Bottom"
+    Visible = "false"
+    />
+
+</Window>

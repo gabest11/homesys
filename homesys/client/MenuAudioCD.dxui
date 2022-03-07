@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<MenuPlaylist Text = "s|Audio CD">
+
+  <Select
+    Name = "m_info_select"
+    Parent = "&amp;m_container"
+    Width = "m_container.Width" 
+    Top = "m_container.Height - 35"
+    Bottom = "m_container.Height"
+    Anchor = "Bottom"
+    ListRows = "2"
+    />
+
+</MenuPlaylist>

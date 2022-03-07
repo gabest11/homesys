@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<MenuWizard
+  m_title.Text = "sl|CHANNELS"
+	m_logo.BackgroundImage = "s|tv.png">
+
+  <List
+    Name = "m_presetlist"
+    Left = "60"
+    Top = "190"
+    Right = "380"
+    Bottom = "Height - 210"
+    ItemHeight = "30"
+    Anchor = "Fill"
+		RedInfo = "sl|NEW_CHANNEL"
+		YellowInfo = "sl|DELETE_CHANNEL"
+    />
+
+  <Select
+    Name = "m_tunerselect"
+    Left = "60"
+    Right = "380"
+    Top = "Height - 195"
+    Height = "30"
+    Anchor = "Bottom"
+    TextAlign = "Center, Middle"
+    ListRows = "0"
+    />
+
+  <CheckButton
+    Name = "m_enabled"
+    Left = "400"
+    Top = "190"
+    Width = "250"
+    Height = "30"
+    Text = "sl|ENABLED"
+    TextBold = "true"
+    Anchor = "Right, Top"
+    />
+
+  <Control
+    Left = "400"
+    Top = "240"
+    Width = "250"
+    Height = "30"
+    Text = "sl|CHANNEL_NAME"
+    TextBold = "true"
+    Anchor = "Right, Top"
+    />
+
+  <Edit
+    Name = "m_name"
+    Left = "400"
+    Top = "280"
+    Width = "250"
+    Height = "30"
+    Anchor = "Right, Top"
+    />
+
+  <Control
+    Left = "400"
+    Top = "330"
+    Width = "250"
+    Height = "30"
+    Text = "sl|EPG"
+    TextBold = "true"
+    Anchor = "Right, Top"
+    />
+
+  <Select
+    Name = "m_channelselect"
+    Left = "400"
+    Top = "370"
+    Width = "250"
+    Height = "30"
+    Anchor = "Right, Top"
+    ListRows = "8"
+    MinListWidth = "300"
+    />
+
+  <Control
+    Left = "400"
+    Top = "420"
+    Width = "250"
+    Height = "30"
+    Text = "sl|PARENTAL"
+    TextBold = "true"
+    Anchor = "Right, Top"
+    />
+
+  <Select
+    Name = "m_parentalselect"
+    Left = "400"
+    Top = "460"
+    Width = "250"
+    Height = "30"
+    Anchor = "Right, Top"
+    ListRows = "3"
+    />
+
+  <Control
+    Left = "400"
+    Top = "510"
+    Width = "250"
+    Height = "30"
+    Text = "sl|FREQUENCY"
+    TextBold = "true"
+    Anchor = "Right, Top"
+    />
+
+  <Edit
+    Name = "m_freq"
+    Left = "400"
+    Top = "550"
+    Width = "250"
+    Height = "30"
+    Anchor = "Right, Top"
+    WantReturn = "true"
+    />
+
+  <VideoNF
+    Name = "m_video"
+    Left = "670"
+    Top = "190"
+    Width = "294"
+    Height = "220"
+    Anchor = "Right, Top"
+    TextHeight = "30"
+    />
+
+  <Control
+    Name = "m_video_text"
+    Left = "670"
+    Top = "420"
+    Width = "294"
+    Height = "30"
+    Anchor = "Right, Top"
+    TextAlign = "Center, Middle"
+    TextWrap = "true"
+    />
+
+</MenuWizard>

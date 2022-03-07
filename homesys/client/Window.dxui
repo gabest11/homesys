@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control>
+
+  <Control
+    Name = "m_banner"
+    Width = "Width"
+    Top = "0"
+    Bottom = "58"
+    Anchor = "Top"
+    BackgroundImage = "s|BannerBackground.png"
+    BackgroundMargin = "20, 2, 20, 18"
+    Visible = "false"
+    Alpha = "0.8f"
+    >
+
+    <Control
+      Name = "m_banner_container"
+      Left = "20"
+      Right = "Width - 20"
+      Height = "40"
+      Anchor = "Fill"
+      Visible = "false"
+      >
+
+      <ScrollTextNF
+        Name = "m_banner_question"
+        Left = "0"
+        Width = "m_banner_container.Width"
+        Height = "1"
+        Anchor = "Fill"
+        TextHeight = "40"
+        TextFace = "Bold"
+        />
+
+      <ImageButton Name = "m_banner_yes" Left = "m_banner_container.Width / 2 - 100" Width = "95" Top = "-45" Height = "35" Text = "sl|YES" Anchor = "Percent, Bottom" />
+      <ImageButton Name = "m_banner_no" Left = "m_banner_container.Width / 2 + 5" Width = "95" Top = "-45" Height = "35" Text = "sl|NO" Anchor = "Percent, Bottom" />
+
+      <Line
+        Color1 = "0xff68a4ff"
+        Color2 = "0xff68a4ff"
+        Left = "0"
+        Right = "m_banner_container.Width"
+        Top = "0"
+        Bottom = "0"
+        Anchor = "Bottom"
+        />
+      
+    </Control>
+
+    <Control
+      BackgroundImage = "s|ExclamationMark.png"
+      Left = "18"
+      Top = "10"
+      Width = "32"
+      Height = "32"
+      Anchor = "Left, Bottom"
+      />
+
+    <Control
+      Name = "m_banner_text"
+      Left = "60"
+      Right = "Width - 60"
+      Top = "5"
+      Height = "40"
+      Anchor = "Bottom"
+      TextFace = "Bold"
+      ScrollNoFocus = "true" 
+      />
+    
+    <Control
+      BackgroundImage = "s|InfoMark.png"
+      Left = "Width - 50"
+      Top = "10"
+      Width = "32"
+      Height = "32"
+      Anchor = "Right, Bottom"
+      />
+
+  </Control>
+  
+</Control>

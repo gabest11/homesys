@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control>
+
+  <ChannelTextureFactory Name = "m_ctf" />
+
+</Control>

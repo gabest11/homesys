@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseDevel|Win32">
+      <Configuration>ReleaseDevel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseStatic|Win32">
+      <Configuration>ReleaseStatic</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{A589A6B4-BDAB-48CC-8220-909E18AFE065}</ProjectGUID>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>libfaad2</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="..\..\common.props" />
+    <Import Project="..\..\debug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="..\..\common.props" />
+    <Import Project="..\..\release.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'" Label="PropertySheets">
+    <Import Project="..\..\common.props" />
+    <Import Project="..\..\release.props" />
+    <Import Project="..\..\static.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'" Label="PropertySheets">
+    <Import Project="..\..\common.props" />
+    <Import Project="..\..\release.props" />
+    <Import Project="..\..\devel.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>HAVE_LRINTF;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>HAVE_LRINTF;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>HAVE_LRINTF;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>HAVE_LRINTF;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="analysis.h" />
+    <ClInclude Include="bits.h" />
+    <ClInclude Include="cfft.h" />
+    <ClInclude Include="cfft_tab.h" />
+    <ClInclude Include="codebook\hcb.h" />
+    <ClInclude Include="codebook\hcb_1.h" />
+    <ClInclude Include="codebook\hcb_10.h" />
+    <ClInclude Include="codebook\hcb_11.h" />
+    <ClInclude Include="codebook\hcb_2.h" />
+    <ClInclude Include="codebook\hcb_3.h" />
+    <ClInclude Include="codebook\hcb_4.h" />
+    <ClInclude Include="codebook\hcb_5.h" />
+    <ClInclude Include="codebook\hcb_6.h" />
+    <ClInclude Include="codebook\hcb_7.h" />
+    <ClInclude Include="codebook\hcb_8.h" />
+    <ClInclude Include="codebook\hcb_9.h" />
+    <ClInclude Include="codebook\hcb_sf.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="decoder.h" />
+    <ClInclude Include="drc.h" />
+    <ClInclude Include="drm_dec.h" />
+    <ClInclude Include="error.h" />
+    <ClInclude Include="faad.h" />
+    <ClInclude Include="filtbank.h" />
+    <ClInclude Include="fixed.h" />
+    <ClInclude Include="huffman.h" />
+    <ClInclude Include="ic_predict.h" />
+    <ClInclude Include="iq_table.h" />
+    <ClInclude Include="is.h" />
+    <ClInclude Include="kbd_win.h" />
+    <ClInclude Include="lt_predict.h" />
+    <ClInclude Include="mdct.h" />
+    <ClInclude Include="mdct_tab.h" />
+    <ClInclude Include="mp4.h" />
+    <ClInclude Include="ms.h" />
+    <ClInclude Include="neaacdec.h" />
+    <ClInclude Include="output.h" />
+    <ClInclude Include="pns.h" />
+    <ClInclude Include="ps_dec.h" />
+    <ClInclude Include="ps_tables.h" />
+    <ClInclude Include="pulse.h" />
+    <ClInclude Include="rvlc.h" />
+    <ClInclude Include="sbr_dct.h" />
+    <ClInclude Include="sbr_dec.h" />
+    <ClInclude Include="sbr_e_nf.h" />
+    <ClInclude Include="sbr_fbt.h" />
+    <ClInclude Include="sbr_hfadj.h" />
+    <ClInclude Include="sbr_hfgen.h" />
+    <ClInclude Include="sbr_huff.h" />
+    <ClInclude Include="sbr_noise.h" />
+    <ClInclude Include="sbr_qmf.h" />
+    <ClInclude Include="sbr_qmf_c.h" />
+    <ClInclude Include="sbr_syntax.h" />
+    <ClInclude Include="sbr_tf_grid.h" />
+    <ClInclude Include="sine_win.h" />
+    <ClInclude Include="specrec.h" />
+    <ClInclude Include="ssr.h" />
+    <ClInclude Include="ssr_fb.h" />
+    <ClInclude Include="ssr_ipqf.h" />
+    <ClInclude Include="ssr_win.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="structs.h" />
+    <ClInclude Include="syntax.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="tns.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bits.cpp" />
+    <ClCompile Include="cfft.cpp" />
+    <ClCompile Include="common.cpp" />
+    <ClCompile Include="decoder.cpp" />
+    <ClCompile Include="drc.cpp" />
+    <ClCompile Include="drm_dec.cpp" />
+    <ClCompile Include="error.cpp" />
+    <ClCompile Include="filtbank.cpp" />
+    <ClCompile Include="hcr.cpp" />
+    <ClCompile Include="huffman.cpp" />
+    <ClCompile Include="ic_predict.cpp" />
+    <ClCompile Include="is.cpp" />
+    <ClCompile Include="lt_predict.cpp" />
+    <ClCompile Include="mdct.cpp" />
+    <ClCompile Include="mp4.cpp" />
+    <ClCompile Include="ms.cpp" />
+    <ClCompile Include="output.cpp" />
+    <ClCompile Include="pns.cpp" />
+    <ClCompile Include="ps_dec.cpp" />
+    <ClCompile Include="ps_syntax.cpp" />
+    <ClCompile Include="pulse.cpp" />
+    <ClCompile Include="rvlc.cpp" />
+    <ClCompile Include="sbr_dct.cpp" />
+    <ClCompile Include="sbr_dec.cpp" />
+    <ClCompile Include="sbr_e_nf.cpp" />
+    <ClCompile Include="sbr_fbt.cpp" />
+    <ClCompile Include="sbr_hfadj.cpp" />
+    <ClCompile Include="sbr_hfgen.cpp" />
+    <ClCompile Include="sbr_huff.cpp" />
+    <ClCompile Include="sbr_qmf.cpp" />
+    <ClCompile Include="sbr_syntax.cpp" />
+    <ClCompile Include="sbr_tf_grid.cpp" />
+    <ClCompile Include="specrec.cpp" />
+    <ClCompile Include="ssr.cpp" />
+    <ClCompile Include="ssr_fb.cpp" />
+    <ClCompile Include="ssr_ipqf.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseStatic|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDevel|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="syntax.cpp" />
+    <ClCompile Include="tns.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

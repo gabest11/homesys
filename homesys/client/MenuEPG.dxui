@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Menu 
+  Text="sl|EPG"
+  RedInfo = "sl|REMIND_ME"
+  GreenInfo = "sl|PRIME_TIME"
+  BlueInfo = "sl|REDOWNLOAD"
+  >
+
+  <EPGView
+    Name = "m_epgview"
+    Left = "60"
+    Top = "120"
+    Right = "Width - 60"
+    Bottom = "Height - 280"
+    Anchor = "Top"
+    />
+
+  <Video
+    Name = "m_video"
+    Left = "60"
+    Top = "m_epgview.Bottom + 10"
+    Right = "300"
+    Bottom = "m_epgview.Bottom + 10 + 180"
+    Anchor = "Left, Top"
+    />
+
+  <EPGProgram
+    Name = "m_program"
+    Left = "m_video.Right + 10"
+    Right = "m_epgview.Right"
+    Top = "m_epgview.Bottom + 10"
+    Bottom = "m_video.Bottom" 
+    Anchor = "Fill"
+    />
+
+</Menu>

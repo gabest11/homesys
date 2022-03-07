@@ -1,0 +1,1 @@
+wsdl -n:Homesys.Web http://homesyslite.timbuktu.hu/service/?WSDL

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Combo
+  TextAlign = "Center, Middle"
+  TextMarginLeft = "Height + 2"
+  TextMarginRight = "Height + 2"
+  >
+
+  <ButtonNF
+    Name = "m_left"
+    Right = "Height"
+    Bottom = "Height"
+    BackgroundImage = "s|SelectLeft.png"
+    HoverImage = "s|SelectLeftHover.png"
+    Anchor = "Left"
+    />
+
+  <ButtonNF
+    Name = "m_right"
+    Left = "Width - Height" 
+    Right = "Width"
+    Bottom = "Height"
+    BackgroundImage = "s|SelectRight.png"
+    HoverImage = "s|SelectRightHover.png"
+    Anchor = "Right"
+    />
+
+</Combo>

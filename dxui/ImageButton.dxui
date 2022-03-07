@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Button
+		BackgroundImage = "s|ImageButtonBackground.png"
+		BackgroundStyle = "Stretch"
+		BackgroundMargin = "14, 0, 14, 0"
+		FocusedImage = "s|ImageButtonFocused.png"
+    DisabledImage = "s|ImageButtonDisabled.png"
+		TextAlign = "Center, Middle"
+		TextHeight = "Height * 4/5 - 2"
+/>
+
+		

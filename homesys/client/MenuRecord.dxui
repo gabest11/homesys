@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+m_logo.BackgroundImage = "s|tv.png"
+m_title.Text = "sl|CHANNEL_SCHEDULE"-->
+<Menu 
+  >
+
+  <ChannelTextureFactory
+    Name = "m_ctf"
+    />
+
+  <RecordingStateTextureFactory
+    Name = "m_rstf"
+    />
+
+  <MenuList
+    Name = "m_menu_list" 
+    Left = "60"
+    Top = "120" 
+    Right = "350"
+    Bottom = "395"
+    Anchor = "Left, Top"
+    TextAlign = "Left, Middle" 
+    TextHeight = "29"
+    TextBold = "false"
+    TextMarginLeft = "20" 
+    ItemHeight = "55"
+    AutoSelect = "true"
+    m_slider.Visible = "false"
+    />
+
+  <List
+    Name = "m_program_list"
+    Left = "60" 
+    Right = "350" 
+    Top = "405" 
+    Bottom = "525"
+    Anchor = "Left" 
+    TextMarginLeft = "5" 
+    ItemHeight = "30"
+    />
+
+  <Control
+    Name = "m_image"
+    Left = "60"
+    Right = "350"
+    Top = "535"
+    Bottom = "Height - 80"
+    Anchor = "Left"
+    BackgroundStyle = "Fit"
+    />
+
+  <EPGProgram
+    Name = "m_program"
+    Left = "370" 
+    Right = "Width - 60" 
+    Top = "120" 
+    Bottom = "Height - 80" 
+    Anchor = "Fill" 
+    MoreDescription = "true"
+    />
+
+</Menu>

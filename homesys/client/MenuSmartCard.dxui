@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Menu
+  m_title.Text = "sl|SMARTCARDS"
+	m_logo.BackgroundImage = "s|"
+  RedInfo = "sl|REFRESH"
+  >
+
+  <ScrollText
+    Name = "m_desc"
+    Left = "60"
+    Right = "Width - 60"
+    Top = "160"
+    Bottom = "Height - 100"
+    Anchor = "Fill"
+    TextHeight = "30"
+    TextEscaped = "true"
+    />
+  
+</Menu>

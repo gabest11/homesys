@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<MenuOSD 
+  Text = "sl|TV"
+	TextAlign =	"Left, Top"
+	TextColor = "Green"
+	TextHeight = "Height / 10"
+	TextBold = "true"
+  >
+
+  <Control
+    Name = "m_epg" 
+    Left = "20" Top = "Height - 240" Right = "Width - 20" Bottom = "Height - 20"
+    Anchor = "Bottom"
+    >
+
+    <Control
+      Name = "m_signal"
+      Top = "-80"
+      Left = "m_epg.Width - 48"
+      Height = "35"
+      Width = "48"
+      Anchor = "Right, Top"
+      BackgroundImage = "s|signal_small.png"
+      TextMarginLeft = "5"
+      TextHeight = "25"
+      TextAlign = "Center, Bottom"
+      TextBold = "true"
+      TextOutline = "true"
+    />
+
+    <EPGViewCompact 
+      Name = "m_epgview" 
+      Width = "m_epg.Width" 
+      Height = "60"
+      Anchor = "Top"
+      />
+
+    <PlayerControl3
+      Name = "m_controls"
+      Top = "-42"
+      Width = "290"
+      Height = "38"
+      />
+
+    <!--TVControl
+      Name = "m_epgdesc"
+      Width = "m_epg.Width" 
+      Top = "70"
+      Bottom = "m_epg.Height"
+      Anchor = "Fill"
+      /-->
+
+    <Control
+      Name = "m_epgdesc"
+      Width = "m_epg.Width" 
+      Top = "70"
+      Bottom = "m_epg.Height"
+      Anchor = "Fill"
+      BackgroundImage = "s|ListBackground.png"
+      BackgroundMargin = "10, 10, 10, 10">
+      
+      <EPGProgram
+        Name = "m_desc"
+        Left = "10"
+        Top = "10"
+        Right = "m_epgdesc.Width - 10"
+        Bottom = "m_epgdesc.Height - 10"
+        Anchor = "Fill"
+        ShowPicture = "true"
+        />
+      
+    </Control>
+    
+  </Control>
+
+  <Control
+    Name = "m_f1"
+    Top = "20"
+    Left = "Width - 56"
+    Height = "36"
+    Width = "36"
+    Anchor = "Right, Top"
+    BackgroundImage = "s|F1.png"
+    Text = "sl|F1"
+    TextHeight = "36 * 2/3"
+    TextAlign = "Center, Middle"
+    TextColor = "Black"
+    />
+
+</MenuOSD>

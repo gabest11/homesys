@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Menu 
+  m_title.Text = "sl|CD_DVD"
+  m_logo.BackgroundImage = "s|dvd.png">
+
+  <MenuList
+    Name = "m_list"
+    Left = "60"
+    Top = "180"
+    Right = "500"
+    Bottom = "Height - 100"
+    Anchor = "Left, Top"
+    TextAlign = "Left, Middle"
+    TextHeight = "Height / 20"
+    TextBold = "true"
+    TextMarginLeft = "35"
+    ItemHeight = "m_list.TextHeight * 3 / 2"
+    AutoSelect = "true"
+    m_slider.Visible = "false"
+    />
+
+  <Video
+    Name = "m_video"
+    Left = "Width - 480" 
+    Top = "180"
+    Right = "Width - 80"
+    Bottom = "480"
+    Anchor = "Right, Top"
+    />
+  
+</Menu>

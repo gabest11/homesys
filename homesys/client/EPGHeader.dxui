@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control>
+
+  <Property Name = "Start" Type = "CTime" />
+  <Property Name = "Duration" Type = "CTimeSpan" Modifier = "RO" />
+
+  <Control 
+    Name = "m_date" 
+    Width = "300" 
+    Height = "Height" 
+    Anchor = "Left" 
+    TextColor = "White" 
+    TextHeight = "Height * 3 / 4" 
+    TextAlign = "Center, Middle">
+
+    <ButtonNF 
+      Name = "m_left" 
+      Right = "Height" 
+      Bottom = "Height" 
+      BackgroundImage = "s|datum_v_gomb1.png" 
+      BackgroundColor = "Black" 
+      HoverImage = "s|datum_v_gomb1.fokusz.png" 
+      Anchor = "Left" />
+    
+    <ButtonNF 
+      Name = "m_right" 
+      Left = "300 - Height" 
+      Right = "300" 
+      Bottom = "Height" 
+      BackgroundImage = "s|datum_v_gomb2.png" 
+      BackgroundColor = "Black" 
+      HoverImage = "s|datum_v_gomb2.fokusz.png" 
+      Anchor = "Right" />
+
+  </Control> 
+  
+  <Control Name = "m_time" Left = "300" Right = "Width" Height = "Height" Anchor ="Fill">
+
+    <EPGHeaderTimeButton Name = "m_time1" Left = "m_time.Width * 0 / 3" Right = "m_time.Width * 1 / 3" Height = "Height" Anchor = "Percent, Top, Percent, Bottom" />
+    <EPGHeaderTimeButton Name = "m_time2" Left = "m_time.Width * 1 / 3" Right = "m_time.Width * 2 / 3" Height = "Height" Anchor = "Percent, Top, Percent, Bottom" />
+    <EPGHeaderTimeButton Name = "m_time3" Left = "m_time.Width * 2 / 3" Right = "m_time.Width * 3 / 3" Height = "Height" Anchor = "Percent, Top, Percent, Bottom" />
+
+  </Control>
+
+</Control>
+
+

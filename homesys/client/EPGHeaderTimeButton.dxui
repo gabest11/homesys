@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control 
+  BackgroundImage = "s|epgguide_felso.png" 
+  BackgroundMargin = "6, 1, 6, 1" 
+  TextAlign = "Center, Middle" 
+  TextBold = "true"
+  TextFace = "Bold"
+  />

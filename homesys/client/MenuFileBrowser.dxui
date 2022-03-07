@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Menu 
+  Text = "sl|FILES"
+	BlueInfo = "sl|PLAYLIST"
+  >
+
+  <Control 
+    Name = "m_container"
+    Rect = "40, 120, Width - 40, Height - 80" 
+    Anchor = "Fill"
+    >
+    
+    <Button
+      Name = "m_up"
+      Text = "s|"
+      Visible = "false" />
+
+    <Edit
+      Name = "m_location"
+      Width = "m_container.Width"
+      Height = "30"
+      BackgroundColor = "Background"
+      Anchor = "Top"
+      WantReturn = "true"
+    />
+
+    <FileBrowser
+      Name = "m_filebrowser"
+      Top = "40"
+      Bottom = "m_container.Height"
+      Width = "m_container.Width"
+      BackgroundColor = "Background"
+      Anchor = "Fill"
+      />
+
+    <Control
+      Name = "m_playlist"
+      Top = "40"
+      Bottom = "m_container.Height"
+      Left = "m_container.Width / 2"
+      Right = "m_container.Width"
+      Anchor = "Percent, Top, Right, Bottom"
+      Visible = "false"
+      Text = "sl|PLAYLIST"
+      TextAlign = "Left, Top"
+      TextHeight = "30"
+      >
+
+      <List
+        Name = "m_playlist_list"
+        Top = "35"
+        Bottom = "m_playlist.Height - 35"
+        Width = "m_playlist.Width"
+        Anchor = "Fill"
+        TextMarginLeft = "5"
+        />
+
+      <Control
+        Name = "m_playlist_total"
+        Bottom = "30"
+        Width = "m_playlist.Width"
+        Anchor = "Top"
+        TextAlign = "Right, Top"
+        />
+
+      <Edit
+        Name = "m_playlist_name"
+        Left = "2"
+        Top = "m_playlist.Height - 30"
+        Height = "30"
+        Width = "m_playlist.Width - 150"
+        Anchor = "Bottom"
+        />
+
+      <ImageButton
+        Name = "m_playlist_add"
+        Left = "m_playlist.Width - 140"
+        Right = "m_playlist.Width"
+        Top = "m_playlist.Height - 32"
+        Height = "35"
+        Anchor = "Right, Bottom"
+        Text = "sl|SAVE"
+        />
+      
+    </Control>
+    
+  </Control>
+
+  <YesNoDialog
+    Name = "m_yesno"
+    Left = "Width / 2 - 200"
+    Top = "Height / 2 - 100"
+    Width = "400"
+    Height = "200"
+    Anchor = "Center, Center"
+    />
+
+</Menu>

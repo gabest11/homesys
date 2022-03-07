@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control>
+
+  <Control 
+    Name = "m_channelbox" 
+    Left = "0" 
+    Right = "300" 
+    Height = "Height" 
+    Anchor ="Left" 
+    BackgroundImage = "s|epgguide_felso.png" 
+    BackgroundMargin = "8, 8, 8, 8"
+    TextHeight = "m_channelbox.Height * 1 / 2" 
+    TextBold = "true" 
+    TextColor = "Text1"
+    TextMargin = "10, 0, 5, 0"
+    />
+
+  <Control 
+    Name = "m_programbox" 
+    Left = "300" 
+    Right = "Width" 
+    Height = "Height" 
+    Anchor ="Fill" />
+
+  <!--Line Width = "Width" Top = "Height" Bottom = "Height" Anchor = "Top" Color1 = "SeparatorLine" Color2 = "SeparatorLine" /-->
+
+</Control>

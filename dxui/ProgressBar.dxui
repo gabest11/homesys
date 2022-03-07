@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control
+  BackgroundImage = "s|ProgressBarBackground.png"
+  IndicatorImage = "s|ProgressBarIndicator.png"
+  TextAlign = "Center, Middle"
+  TextColor = "Text3"
+  Indicator = "true"
+  FillColor = "Green"
+  >
+  <Property Name="Indicator" Type="bool" />
+  <Property Name="IndicatorImage" Type="std::wstring" />
+  <Property Name="FillColor" Type="DWORD" />
+</Control>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control
+  >
+
+  <NumpadButton Name = "m_1" BackgroundImage = "s|alap_bill_1.png" FocusedImage = "s|aktiv_bill_1.png"
+                Left = "0" Top = "0" Width = "99" Height = "78" />
+  <NumpadButton Name = "m_2" BackgroundImage = "s|alap_bill_2.png" FocusedImage = "s|aktiv_bill_2.png"
+                Left = "99" Top = "0" Width = "99" Height = "78" />
+  <NumpadButton Name = "m_3" BackgroundImage = "s|alap_bill_3.png" FocusedImage = "s|aktiv_bill_3.png"
+                Left = "99*2" Top = "0" Width = "99" Height = "78" />
+  <NumpadButton Name = "m_4" BackgroundImage = "s|alap_bill_4.png" FocusedImage = "s|aktiv_bill_4.png"
+                Left = "0" Top = "78" Width = "99" Height = "78" />
+  <NumpadButton Name = "m_5" BackgroundImage = "s|alap_bill_5.png" FocusedImage = "s|aktiv_bill_5.png"
+                Left = "99" Top = "78" Width = "99" Height = "78" />
+  <NumpadButton Name = "m_6" BackgroundImage = "s|alap_bill_6.png" FocusedImage = "s|aktiv_bill_6.png"
+                Left = "99*2" Top = "78" Width = "99" Height = "78" />
+  <NumpadButton Name = "m_7" BackgroundImage = "s|alap_bill_7.png" FocusedImage = "s|aktiv_bill_7.png"  
+                Left = "0" Top = "78*2" Width = "99" Height = "78" />
+  <NumpadButton Name = "m_8" BackgroundImage = "s|alap_bill_8.png" FocusedImage = "s|aktiv_bill_8.png"  
+                Left = "99" Top = "78*2" Width = "99" Height = "78" />
+  <NumpadButton Name = "m_9" BackgroundImage = "s|alap_bill_9.png" FocusedImage = "s|aktiv_bill_9.png" 
+                Left = "99*2" Top = "78*2" Width = "99" Height = "78" />
+  <NumpadButton Name = "m_x" BackgroundImage = "s|alap_bill_x2.png" FocusedImage = "s|aktiv_bill_x2.png" 
+                Left = "0" Top = "78*3" Width = "99" Height = "78" />
+  <NumpadButton Name = "m_0" BackgroundImage = "s|alap_bill_02.png" FocusedImage = "s|aktiv_bill_02.png"
+                Left = "99" Top = "78*3" Width = "99" Height = "78" />
+  <NumpadButton Name = "m_y" BackgroundImage = "s|alap_bill_#2.png" FocusedImage = "s|aktiv_bill_#2.png"
+                Left = "99*2" Top = "78*3" Width = "99" Height = "78" />
+
+</Control>

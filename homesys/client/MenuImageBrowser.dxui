@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Menu 
+  Text = "sl|PICTURES"
+  >
+
+  <Control
+    Name = "m_container"
+    Rect = "40, 120, Width - 40, Height - 80" 
+    Anchor = "Fill"
+    >
+    
+    <Button
+      Name = "m_up"
+      Text = "s|"
+      Visible = "false" />
+
+    <Edit
+      Name = "m_location"
+      Width = "m_container.Width"
+      Height = "30"
+      BackgroundColor = "Background"
+      Anchor = "Top"
+      WantReturn = "true"
+    />
+
+    <ImageBrowser
+      Name = "m_imagebrowser"
+      Top = "40"
+      Bottom = "m_container.Height"
+      Width = "m_container.Width"
+      BackgroundColor = "Background"
+      Anchor = "Fill"
+      />
+
+    </Control>
+  
+</Menu>

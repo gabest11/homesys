@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<MenuWizard
+  m_title.Text = "sl|ON_SCREEN_KEYBOARD"
+  m_logo.BackgroundImage = "s|jolly.png"
+  >
+
+  <Control 
+    Name = "m_container" 
+    Left = "m_wizard.Left" 
+    Top = "200" 
+    Right = "m_wizard.Right" 
+    Bottom = "m_wizard.Top" 
+    Anchor = "Center, Top">
+
+    <Edit 
+      Name = "m_input" 
+      Width = "m_container.Width" 
+      Height = "40" 
+      Anchor = "Left, Top, Right, Top" />
+    
+    <Numpad 
+      Name = "m_numpad" 
+      Left = "m_container.Width - 99 * 3"
+      Right = "m_container.Width" 
+      Top = "70" 
+      Width = "99 * 3" 
+      Height = "78 * 4" 
+      Anchor = "Right, Top" 
+      HintControl = "&amp;m_hint" />
+    
+    <Control 
+      Name = "m_hint" 
+      Top = "70" 
+      Width = "m_numpad.Left - 30" 
+      Height = "40" 
+      Anchor = "Left, Top" />
+
+  </Control>
+
+</MenuWizard>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Button
+  TextMarginLeft = "Height + 5"
+	BackgroundImage = "s|CheckButtonBackground.png"
+	FocusedImage = "s|CheckButtonFocused.png"
+	CheckedImage = "s|CheckButtonChecked.png"
+  >
+  
+  <Property Name="CheckedImage" Type="std::wstring" />
+  <Property Name="UncheckedImage" Type="std::wstring" />
+  
+</Button>

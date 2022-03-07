@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Control>
+
+  <Control
+    Name = "m_container"
+    Width = "Width"
+    Height = "Height"
+    Anchor = "Fill"
+    >
+
+    <Control
+      Name = "m_title"
+      Height = "35"
+      Width = "Width - 200"
+      Anchor = "Top"
+      TextFace = "Bold"
+      ScrollNoFocus = "true"
+      />
+
+    <Control
+      Name = "m_schedule"
+      Top = "6" 
+      Left = "Width - 195"
+      Right = "Width - 175"
+      Height = "25"
+      Anchor = "Right, Top"
+      />
+
+    <Control
+      Name = "m_time"
+      Left = "Width - 175"
+      Right = "Width"
+      Height = "35"
+      Anchor = "Right, Top"
+      TextColor = "Text2"
+      TextAlign = "Right, Middle"
+      TextFace = "Bold"
+      />
+
+    <ScrollTextNF
+      Name = "m_desc"
+      Top = "35"
+      Bottom = "Height"
+      Width = "Width"
+      Anchor = "Fill"
+      TextHeight = "30"
+      />
+
+  </Control>
+
+  <RecordingStateTextureFactory 
+    Name = "m_rstf" 
+    />
+
+</Control>

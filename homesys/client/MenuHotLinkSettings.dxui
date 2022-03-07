@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<MenuWizard
+  m_title.Text = "sl|HOTLINK_STRIP"
+  m_logo.BackgroundImage = "s|setting_recommend.png"
+  >
+
+  <Control Left = "m_wizard.Left" Top = "240" Right = "m_wizard.Right" Bottom = "m_wizard.Top" Anchor = "Center, Top">
+
+    <Control Top = "0*45" Anchor = "Top">
+      <Control Width = "380" Height = "30" Text = "sl|SETTINGS_HOTLINK_TIMEOUT" TextAlign = "Left, Middle" TextHeight = "28" />
+      <Select Name = "m_timeout" Left = "390" Width = "200" Height = "30" />
+      <Line Top = "37" Width = "m_wizard.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    </Control>
+
+    <Control Top = "1*45" Anchor = "Top">
+      <Control Width = "380" Height = "30" Text = "sl|SETTINGS_HOTLINK_PROGRAM" TextAlign = "Left, Middle" TextHeight = "28" />
+      <CheckButton Name = "m_program" Left = "390" Width = "200" Height = "30" />
+      <Line Top = "37" Width = "m_wizard.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    </Control>
+
+    <Control Top = "2*45" Anchor = "Top">
+      <Control Width = "380" Height = "30" Text = "sl|SETTINGS_HOTLINK_MESSAGE" TextAlign = "Left, Middle" TextHeight = "28" />
+      <CheckButton Name = "m_message" Left = "390" Width = "200" Height = "30" />
+      <Line Top = "37" Width = "m_wizard.Width" Height = "1" Anchor = "Top" BackgroundColor = "SeparatorLine" />
+    </Control>
+
+  </Control>
+
+</MenuWizard>

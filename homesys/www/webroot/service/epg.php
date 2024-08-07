@@ -79,6 +79,8 @@ if(!empty($argv[1]) && $argv[1] == 'import')
 			if(empty($xml2)) die('???');
 
 			$archive->addFromString(sprintf('n_events_%d.xml', $chid), $s2);
+
+			sleep(1); // throttle, or get empty string after a few requests
 		}
 
 		$archive->compress(Phar::GZ);

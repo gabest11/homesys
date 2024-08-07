@@ -74,7 +74,7 @@ if(!empty($argv[1]) && $argv[1] == 'import')
 
 			$s2 = file_get_contents($baseurl.'n_events.php?now='.$now.'&chid='.$ch['chid']);
 
-			$xml2 = simplexml_load_string($s);
+			$xml2 = simplexml_load_string($s2);
 
 			if(empty($xml2)) die('???');
 

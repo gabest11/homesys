@@ -70,17 +70,19 @@ if(!empty($argv[1]) && $argv[1] == 'import')
 		{
 			$chid = $ch['id'];
 
-			echo $chid.' '.$ch->Title."\r\n";
+			echo $chid.' '.$ch->Title.PHP_EOL;
+
+			sleep(10);
 
 			$s2 = file_get_contents($baseurl.'n_events.php?now='.$now.'&chid='.$ch['chid']);
-
+			
 			$xml2 = simplexml_load_string($s2);
 
 			if(empty($xml2)) die('???');
 
-			$archive->addFromString(sprintf('n_events_%d.xml', $chid), $s2);
+			if(empty($xml2->Channel->EventList->EventDate)) echo 'no events'.PHP_EOL;
 
-			sleep(5); // throttle, or get empty string after a few requests
+			$archive->addFromString(sprintf('n_events_%d.xml', $chid), $s2);
 		}
 
 		$archive->compress(Phar::GZ);
@@ -89,7 +91,7 @@ if(!empty($argv[1]) && $argv[1] == 'import')
 
 		@unlink($tar);
 	}
-	
+
 	// import gz
 
 	$r->Import($targz);
